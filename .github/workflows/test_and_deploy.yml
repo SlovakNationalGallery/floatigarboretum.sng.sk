@@ -42,7 +42,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - run: npm install && npm run production
+      - run: npm ci && npm run build
       - run: ./vendor/bin/phpunit
         env:
           APP_KEY: base64:htnEH5P98wxpLJtQpmc7LyTXIf0/nb+4BbnXrLRHNDw=
