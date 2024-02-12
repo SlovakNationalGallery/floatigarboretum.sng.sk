@@ -65,7 +65,9 @@
             <section
                 class="xl:flex xl:items-start xl:justify-between xl:gap-6 xl:flex-row-reverse"
             >
-                <img src="./assets/oto.png" class="ml-auto" />
+                <div class="pb-6 xl:p-16 xl:w-1/2">
+                    <img src="./assets/oto.jpg" class="ml-auto drop-shadow-xl" />
+                </div>
                 <article class="xl:w-1/2">
                     <h3 class="font-display text-2xl pb-1 xl:pb-3">
                         {{ t("Oto Hudec, artist") }}
@@ -94,7 +96,10 @@
                 </article>
             </section>
             <section class="xl:flex xl:items-start xl:justify-between xl:gap-6">
-                <img src="./assets/lydia.png" />
+                <div class="pb-6 xl:p-16 xl:w-1/2">
+                    <img src="./assets/lydia.jpg" class="ml-auto drop-shadow-xl" />
+                </div>
+
                 <article class="xl:w-1/2">
                     <h3 class="font-display text-2xl pb-1 xl:pb-3">
                         {{ t("Lýdia Pribišová, curator") }}
