@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Oto Sans";
+    src: url("../fonts/OtoSans-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Oto Hand";
+    src: url("../fonts/OtoHand-Regular.woff2") format("woff2");
+    font-display: swap;
+}
