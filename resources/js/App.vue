@@ -46,14 +46,14 @@
             <div class="pb-10 flex flex-col gap-3 xl:flex-row">
                 <a
                     class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 xl:flex-initial xl:w-auto xl:px-8"
-                    :href="t('./assets/curator_text_en.pdf')"
+                    :href="`downloads/curator_text_${locale}.pdf`"
                     download="floating_arboretum.pdf"
                 >
                     {{ t("the curator's text") }}
                 </a>
                 <a
                     class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 xl:flex-initial xl:w-auto xl:px-8"
-                    href="assets/julia_hill_interview.pdf"
+                    href="downloads/julia_hill_interview.pdf"
                     download="julia_hill_interview.pdf"
                 >
                     {{ t("interview with Julia Hill") }}

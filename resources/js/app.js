@@ -11,7 +11,6 @@ const i18n = createI18n({
     messages: {
         sk: {
             en: "sk",
-            "./assets/curator_text_en.pdf": "./assets/curator_text_sk.pdf",
             "floating arboretum": "plávajúce arborétum",
             "Lýdia Pribišová, curator": "Lýdia Pribišová, kurátorka",
             "Oto Hudec works with an archive/database/file of stories, telling of a collective effort when a united community of activists prevented deforestation and the destruction of trees. He calls for their rescue, as well as for the rescue of other endangered trees in the world. He contemplates an arboretum, a symbolic utopian place, a sanctuary for trees threatened by human expansion and extractivism. The project is an imaginative glimpse into a dystopian future in which we select and save trees by moving them to a safe (fictional) arboretum. We believe that Floating Arboretum's stories can spark transformative imagination, and that they can be inspirational in our everyday lives.":
