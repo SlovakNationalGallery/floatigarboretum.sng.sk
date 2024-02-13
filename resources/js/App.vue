@@ -11,6 +11,7 @@
                 }}</span>
                 <button
                     @click="locale === 'en' ? (locale = 'sk') : (locale = 'en')"
+                    class="uppercase"
                 >
                     {{ t("en") }}
                 </button>
