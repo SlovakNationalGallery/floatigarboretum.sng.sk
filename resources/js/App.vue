@@ -60,7 +60,7 @@
                 </a>
                 <a
                     class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 xl:flex-initial xl:w-auto xl:px-8"
-                    href="downloads/julia_hill_interview.pdf"
+                    :href="`downloads/julia_hill_interview_${locale}.pdf`"
                     download="julia_hill_interview.pdf"
                 >
                     {{ t("interview with Julia Hill") }}
