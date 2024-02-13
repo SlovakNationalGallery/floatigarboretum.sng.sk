@@ -1,0 +1,69 @@
+name: CI/CD
+
+# Trigger test on every push, deploy only after push on main branch after test
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: floatingarboretum_testing
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Restore Composer cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+      - name: Restore npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+      - run: composer install --no-progress --no-interaction
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - run: npm ci && npm run build
+      - run: ./vendor/bin/phpunit
+        env:
+          APP_KEY: base64:htnEH5P98wxpLJtQpmc7LyTXIf0/nb+4BbnXrLRHNDw=
+          DATABASE_URL: mysql://root:@127.0.0.1:${{ job.services.mysql.ports[3306] }}/floatingarboretum_testing
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-22.04
+    needs: [test]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Deploy
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+          known-hosts: ${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}
+          deployer-version: 7.3.0
+          dep: deploy
