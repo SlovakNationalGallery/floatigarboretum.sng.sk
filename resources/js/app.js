@@ -11,7 +11,7 @@ const i18n = createI18n({
     messages: {
         sk: {
             en: "sk",
-            "floating arboretum": "plávajúce arborétum",
+            "floating arboretum": "floating arboretum",
             "Lýdia Pribišová, curator": "Lýdia Pribišová, kurátorka",
             "Floating Arboretum is a work by Oto Hudec presented in the Czech and Slovak Pavilion at the 60th International Art Exhibition of La Biennale di Venezia: Stranieri Ovunque - Foreigners Everywhere. The 60th International Art Exhibition will take place from Saturday 20 April to Sunday 24 November, 2024 (pre-opening on April 17, 18 and 19).":
                 "Floating Arboretum je dielo Ota Hudeca prezentované v českom a slovenskom pavilóne na 60. medzinárodnej výstave umenia La Biennale di Venezia: Stranieri Ovunque - Foreigners Everywhere. 60. medzinárodná výstava umenia sa uskutoční od soboty 20. apríla do nedele 24. novembra 2024 (predvernisáž 17., 18. a 19. apríla).",
