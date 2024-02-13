@@ -4,7 +4,7 @@
     >
         <div class="border-b border-blue-darkest">
             <div
-                class="px-4 pt-6 pb-5 flex justify-between items-center xl:px-28 max-w-6xl mx-auto"
+                class="px-4 pt-6 pb-5 flex justify-between items-center md:px-28 max-w-6xl mx-auto"
             >
                 <span class="font-display text-2xl pb-1">{{
                     t("floating arboretum")
@@ -18,21 +18,21 @@
         </div>
         <div class="mx-auto max-w-6xl">
             <h1
-                class="pl-6 pr-12 text-white font-display text-2xl pt-20 xl:pl-28 xl:w-[42rem]"
+                class="pl-6 pr-12 text-white font-display text-2xl pt-20 md:pl-28 md:w-[42rem]"
             >
                 60th International Art Exhibition of La Biennale di Venezia:
                 Stranieri Ovunque – Foreigners Everywhere
             </h1>
         </div>
         <img
-            class="pb-12 object-cover h-96 xl:h-[32rem] xl:mx-auto"
+            class="pb-12 object-cover h-96 md:h-[32rem] md:mx-auto"
             src="./assets/arboretum.png"
         />
     </div>
     <div class="bg-blue-light">
-        <div class="max-w-6xl mx-auto px-6 py-10 xl:px-28">
+        <div class="max-w-6xl mx-auto px-6 py-10 md:px-28">
             <article>
-                <h2 class="font-display text-3xl pb-1 xl:pb-3 xl:text-6xl">
+                <h2 class="font-display text-3xl pb-1 md:pb-3 md:text-6xl">
                     {{ t("floating arboretum") }}
                 </h2>
                 <p class="pb-6 max-w-prose">
@@ -50,33 +50,33 @@
                     }}
                 </p>
             </article>
-            <div class="pb-10 flex flex-col gap-3 xl:flex-row">
+            <div class="pb-10 flex flex-col gap-3 md:flex-row">
                 <a
-                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 xl:flex-initial xl:w-auto xl:px-8"
+                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
                     :href="`downloads/curator_text_${locale}.pdf`"
                     download="floating_arboretum.pdf"
                 >
                     {{ t("the curator's text") }}
                 </a>
                 <a
-                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 xl:flex-initial xl:w-auto xl:px-8"
+                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
                     :href="`downloads/julia_hill_interview_${locale}.pdf`"
                     download="julia_hill_interview.pdf"
                 >
                     {{ t("interview with Julia Hill") }}
                 </a>
             </div>
-            <h2 class="font-display text-3xl pb-4 xl:text-4xl">
+            <h2 class="font-display text-3xl pb-4 md:text-4xl">
                 {{ t("artist and curator") }}
             </h2>
             <section
-                class="xl:flex xl:items-start xl:justify-between xl:gap-6 xl:flex-row-reverse"
+                class="md:flex md:items-start md:justify-between md:gap-6 md:flex-row-reverse"
             >
-                <div class="pb-6 xl:p-16 xl:w-1/2">
-                    <img src="./assets/oto.jpg" class="ml-auto drop-shadow-xl" />
+                <div class="pb-6 md:-8 lg:p-16 md:w-1/2">
+                    <img src="./assets/oto.jpg" class="md:ml-auto drop-shadow-xl max-w-72" />
                 </div>
-                <article class="xl:w-1/2">
-                    <h3 class="font-display text-2xl pb-1 xl:pb-3">
+                <article class="md:w-1/2">
+                    <h3 class="font-display text-2xl pb-1 md:pb-3">
                         {{ t("Oto Hudec, artist") }}
                     </h3>
                     <p class="pb-6 max-w-prose">
@@ -102,13 +102,13 @@
                     </p>
                 </article>
             </section>
-            <section class="xl:flex xl:items-start xl:justify-between xl:gap-6">
-                <div class="pb-6 xl:p-16 xl:w-1/2">
-                    <img src="./assets/lydia.jpg" class="ml-auto drop-shadow-xl" />
+            <section class="md:flex md:items-start md:justify-between md:gap-6">
+                <div class="pb-6 md:-8 lg:p-16 md:w-1/2">
+                    <img src="./assets/lydia.jpg" class="md:ml-auto drop-shadow-xl max-w-72" />
                 </div>
 
-                <article class="xl:w-1/2">
-                    <h3 class="font-display text-2xl pb-1 xl:pb-3">
+                <article class="md:w-1/2">
+                    <h3 class="font-display text-2xl pb-1 md:pb-3">
                         {{ t("Lýdia Pribišová, curator") }}
                     </h3>
                     <p class="pb-6 max-w-prose">
@@ -136,7 +136,7 @@
             </section>
         </div>
     </div>
-    <footer class="bg-blue-dark text-blue-lightest p-6 flex xl:justify-center">
+    <footer class="bg-blue-dark text-blue-lightest p-6 flex md:justify-center">
         © 2024 lab.SNG
     </footer>
 </template>
