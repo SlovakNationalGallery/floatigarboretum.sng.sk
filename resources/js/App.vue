@@ -1,8 +1,6 @@
 <template>
-    <div
-        class="bg-gradient-to-b from-blue-lightest via-blue-lighter to-blue-dark to-70%"
-    >
-        <div class="border-b border-blue-darkest/30">
+    <div class="bg-gradient-hero">
+        <div class="border-b border-blue-dark/30">
             <div
                 class="px-4 pt-6 pb-5 flex justify-between items-center md:px-28 max-w-6xl mx-auto"
             >
@@ -15,7 +13,7 @@
                             ? switchLanguage('sk')
                             : switchLanguage('en')
                     "
-                    class="uppercase"
+                    class="uppercase underline hover:no-underline underline-offset-2 text-lg"
                 >
                     {{ lang }}
                 </button>
@@ -23,32 +21,34 @@
         </div>
         <div class="mx-auto max-w-6xl">
             <h1
-                class="pl-6 pr-12 font-display text-xl md:text-2xl pt-20 md:pl-28 md:w-[42rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
+                class="pl-6 pr-12 font-display text-xl md:text-2xl pt-20 md:pl-28 md:w-[35rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
             >
-                Slovak National Participation
-                60th International Art Exhibition
-                of La Biennale di Venezia
+                {{
+                    $t(
+                        "Slovak National Participation 60th International Art Exhibition of La Biennale di Venezia"
+                    )
+                }}
             </h1>
         </div>
         <img
-            class="pb-12 object-cover h-96 md:h-[32rem] md:mx-auto"
+            class="pb-12 object-cover h-96 md:mx-auto md:-mt-16"
             src="./assets/arboretum.png"
         />
     </div>
     <div class="bg-blue-light">
-        <div class="max-w-6xl mx-auto px-6 py-10 md:px-28">
+        <div class="max-w-6xl mx-auto px-6 py-12 md:px-28">
             <article>
-                <h2 class="font-display text-3xl pb-1 md:pb-3 md:text-6xl">
+                <h2 class="font-display text-3xl pb-4 md:pb-3 md:text-6xl">
                     {{ $t("floating arboretum") }}
                 </h2>
-                <p class="pb-6 max-w-prose">
+                <p class="pb-6 text-xl md:text-2xl max-w-[800px]">
                     {{
                         $t(
                             "Floating Arboretum is a work by Oto Hudec presented in the Czech and Slovak Pavilion at the 60th International Art Exhibition of La Biennale di Venezia: Stranieri Ovunque - Foreigners Everywhere. The 60th International Art Exhibition will take place from Saturday 20 April to Sunday 24 November, 2024 (pre-opening on April 17, 18 and 19)."
                         )
                     }}
                 </p>
-                <p class="pb-6 max-w-prose">
+                <p class="pb-6 text-xl md:text-2xl max-w-[800px]">
                     {{
                         $t(
                             "Oto Hudec works with an archive/database/file of stories, telling of a collective effort when a united community of activists prevented deforestation and the destruction of trees. He calls for their rescue, as well as for the rescue of other endangered trees in the world. He contemplates an arboretum, a symbolic utopian place, a sanctuary for trees threatened by human expansion and extractivism. The project is an imaginative glimpse into a dystopian future in which we select and save trees by moving them to a safe (fictional) arboretum. We believe that Floating Arboretum's stories can spark transformative imagination, and that they can be inspirational in our everyday lives."
@@ -58,14 +58,14 @@
             </article>
             <div class="pb-10 flex flex-col gap-3 md:flex-row">
                 <a
-                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
+                    class="font-display text-lg flex justify-center w-full bg-orange hover:bg-orange-600 transition rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
                     :href="`downloads/curator_text_${locale}.pdf`"
                     download="floating_arboretum.pdf"
                 >
                     {{ $t("the curator's text") }}
                 </a>
                 <a
-                    class="font-display text-lg flex justify-center w-full bg-orange rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
+                    class="font-display text-lg flex justify-center w-full bg-orange hover:bg-orange-600 transition rounded-[70px] py-3.5 md:flex-initial md:w-auto md:px-8"
                     :href="`downloads/julia_hill_interview_${locale}.pdf`"
                     download="julia_hill_interview.pdf"
                 >
@@ -164,3 +164,15 @@ const switchLanguage = (locale) => {
     lang.value = locale;
 };
 </script>
+
+<style>
+.bg-gradient-hero {
+    background: linear-gradient(
+        180deg,
+        #90b5dc 0%,
+        #90b5dc 52.78%,
+        #608db5 53.5%,
+        #4a7499 100%
+    );
+}
+</style>
