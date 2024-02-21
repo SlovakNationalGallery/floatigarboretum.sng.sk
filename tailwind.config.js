@@ -13,6 +13,7 @@ export default {
         lightest: '#F9FCFF',
         lighter: '#ACCCEE',
         light: '#E0EEFD',
+        DEFAULT: '#4A7499',
         dark: '#5783A9',
         darkest: '#1B3346'
       },

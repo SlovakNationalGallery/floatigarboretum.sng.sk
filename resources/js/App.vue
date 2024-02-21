@@ -23,10 +23,11 @@
         </div>
         <div class="mx-auto max-w-6xl">
             <h1
-                class="pl-6 pr-12 text-white font-display text-2xl pt-20 md:pl-28 md:w-[42rem]"
+                class="pl-6 pr-12 font-display text-xl md:text-2xl pt-20 md:pl-28 md:w-[42rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
             >
-                60th International Art Exhibition of La Biennale di Venezia:
-                Stranieri Ovunque – Foreigners Everywhere
+                Slovak National Participation
+                60th International Art Exhibition
+                of La Biennale di Venezia
             </h1>
         </div>
         <img
