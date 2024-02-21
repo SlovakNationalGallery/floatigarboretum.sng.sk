@@ -2,7 +2,7 @@
     <div
         class="bg-gradient-to-b from-blue-lightest via-blue-lighter to-blue-dark to-70%"
     >
-        <div class="border-b border-blue-darkest">
+        <div class="border-b border-blue-darkest/30">
             <div
                 class="px-4 pt-6 pb-5 flex justify-between items-center md:px-28 max-w-6xl mx-auto"
             >
