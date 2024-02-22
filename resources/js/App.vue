@@ -165,7 +165,7 @@ const switchLanguage = (locale) => {
 };
 </script>
 
-<style>
+<style scoped>
 .bg-gradient-hero {
     background: linear-gradient(
         180deg,
