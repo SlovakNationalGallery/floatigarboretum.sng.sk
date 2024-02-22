@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gradient-hero">
-        <div class="border-b border-blue-dark/30">
+        <div class="border-b border-blue-darker/30">
             <div
                 class="px-4 pt-6 pb-5 flex justify-between items-center md:px-28 max-w-6xl mx-auto"
             >
@@ -13,9 +13,12 @@
                             ? switchLanguage('sk')
                             : switchLanguage('en')
                     "
-                    class="uppercase underline hover:no-underline underline-offset-2 text-lg"
+                    class="uppercase text-lg group"
                 >
                     {{ lang }}
+                    <span
+                        class="block opacity-0 group-hover:opacity-100 transition h-0.5 bg-blue-darker -mt-0.5"
+                    ></span>
                 </button>
             </div>
         </div>
