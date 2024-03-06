@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto container">
         <h1
             class="pl-6 pr-12 font-display text-xl md:text-2xl pt-20 md:pl-28 md:w-[35rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
         >
@@ -15,7 +15,7 @@
         src="./assets/arboretum.png"
     />
     <div class="bg-blue-light">
-        <div class="max-w-6xl mx-auto px-6 py-12 md:px-28">
+        <div class="container mx-auto px-6 py-12">
             <article>
                 <h2 class="font-display text-3xl pb-4 md:pb-3 md:text-6xl">
                     {{ $t("floating arboretum") }}

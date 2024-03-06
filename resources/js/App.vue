@@ -2,7 +2,7 @@
     <div class="bg-gradient-hero">
         <div class="border-b border-blue-darker/30">
             <div
-                class="px-4 pt-6 pb-5 flex justify-between items-center md:px-28 max-w-6xl mx-auto"
+                class="px-4 pt-6 pb-5 flex justify-between items-center container mx-auto"
             >
                 <span class="font-display text-2xl pb-1">{{
                     $t("floating arboretum")
