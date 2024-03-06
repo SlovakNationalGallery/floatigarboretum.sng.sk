@@ -27,6 +27,8 @@ class QrCodesController extends Controller
 
     public $utmParameters = [
         'utm_source' => 'qr',
+        'utm_medium' => 'print',
+        'utm_campaign' => 'bienale',
     ];
 
     public function index()
@@ -49,17 +51,14 @@ class QrCodesController extends Controller
 
             foreach ($this->routes as $route) {
                 $urlWithUtm = url($route) . '?' . http_build_query($this->utmParameters);
-                $qrCode = QrCode::format('png')->size(500)->generate($urlWithUtm);
-                $fileName = str_replace('/', '_', $route) . '.png';
+                $qrCode = QrCode::size(100)->generate($urlWithUtm);
+                $fileName = str_replace('/', '_', $route) . '.svg';
                 Storage::put($tempDirectory . $fileName, $qrCode);
                 $zip->addFile(storage_path('app/' . $tempDirectory . $fileName), $fileName);
             }
-            
-            if (file_exists($zipFilePath)) {
-                return response()->download($zipFilePath, $zipFileName)->deleteFileAfterSend(true);
-            } else {
-                return response()->json(['error' => 'Zip file was not created.'], 500);
-            }
+
+            $zip->close();
+            return response()->download($zipFilePath, $zipFileName)->deleteFileAfterSend(true);
         } else {
             return response()->json(['error' => 'Could not create zip file.'], 500);
         }
