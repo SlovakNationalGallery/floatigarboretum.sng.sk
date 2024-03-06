@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-hero pt-12">
+    <div class="bg-gradient-hero pt-3 md:pt-12">
         <div
             class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
         >
@@ -9,17 +9,25 @@
                 </h1>
                 <nav class="ml-8 space-x-6 flex">
                     <a href="#" class="text-lg group inline-block">
-                        About
+                        {{ $t("About the project") }}
                         <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         ></span>
                     </a>
+                    <!-- 
                     <a href="#" class="text-lg group">
                         Discover stories
                         <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         ></span>
                     </a>
+                    <a href="#" class="text-lg group">
+                        For visitors
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        ></span>
+                    </a>
+                     -->
                 </nav>
             </div>
             <div>
@@ -27,7 +35,7 @@
                     <span class="hidden md:inline">Slovenčina</span>
                     <span class="md:hidden">SK</span>
                     <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
                     ></span>
                 </button>
@@ -37,7 +45,7 @@
                     <span class="md:hidden">EN</span>
 
                     <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
                     ></span>
                 </button>
