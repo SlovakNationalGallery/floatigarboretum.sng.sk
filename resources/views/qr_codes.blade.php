@@ -1,10 +1,15 @@
 @extends('layouts.blank')
 
 @section('content')
-    <div class="mx-12 my-12 max-w-6xl mx-auto">
+    <div class="px-8 my-12 max-w-6xl mx-auto">
         <h1 class="font-bold mb-8 pl-8 text-2xl">
             Trees QR codes
         </h1>
+
+        <a href="{{ route('qr.download') }}"
+            class="font-display bg-orange hover:bg-orange-600 transition rounded-2xl py-2 px-4 mb-8 inline-block">
+            Download all QR codes
+        </a>
 
         <table class="table-auto border-collapse w-full">
             <thead>
@@ -15,12 +20,13 @@
             </thead>
             <tbody class="bg-white">
                 @foreach ($routes as $route)
-                <tr>
-                    <td class="border-b border-gray-soft p-4 pl-8">
-                        {!! QrCode::size(100)->generate(url($route) . '?' . http_build_query($utmParameters)); !!}
-                    </td>
-                    <td class="border-b border-gray-soft p-4 pl-8"><a href="{{ url($route) }}" target="_blank" class="underline hover:no-underline">{{ $route }}</a></td>
-                </tr>
+                    <tr>
+                        <td class="border-b border-gray-soft p-4 pl-8">
+                            {!! QrCode::size(100)->generate(url($route) . '?' . http_build_query($utmParameters)) !!}
+                        </td>
+                        <td class="border-b border-gray-soft p-4 pl-8"><a href="{{ url($route) }}" target="_blank"
+                                class="underline hover:no-underline">{{ $route }}</a></td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
