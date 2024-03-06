@@ -10,7 +10,8 @@
             </div>
             <div>
                 <button @click="switchLanguage('sk')" class="text-lg group">
-                    Slovenčina
+                    <span class="hidden md:inline">Slovenčina</span>
+                    <span class="md:hidden">SK</span>
                     <span
                         class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
                         :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
@@ -18,7 +19,9 @@
                 </button>
                 /
                 <button @click="switchLanguage('en')" class="text-lg group">
-                    English
+                    <span class="hidden md:inline">English</span>
+                    <span class="md:hidden">EN</span>
+
                     <span
                         class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
                         :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
