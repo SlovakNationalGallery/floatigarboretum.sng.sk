@@ -11,11 +11,11 @@ export default {
         colors: {
             blue: {
                 lightest: "#F9FCFF",
-                lighter: "#90B5DC",
-                light: "#E0EEFD",
+                lighter: "#C6DCF3",
+                light: "#91B6DD",
                 DEFAULT: "#4A7499",
                 dark: "#5783A9",
-                darker: "#1B3346",
+                darker: "#2C4356",
             },
             orange: {
                 50: "#fef8ee",

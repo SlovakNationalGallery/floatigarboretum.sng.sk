@@ -1,23 +1,27 @@
 <template>
-    <div class="bg-gradient-hero">
-        <div class="border-b border-blue-darker/30">
-            <div
-                class="px-4 pt-6 pb-5 flex justify-between items-center container mx-auto"
-            >
-                <span class="font-display text-2xl pb-1">{{
-                    $t("floating arboretum")
-                }}</span>
-                <button
-                    @click="
-                        lang === 'en'
-                            ? switchLanguage('sk')
-                            : switchLanguage('en')
-                    "
-                    class="uppercase text-lg group"
-                >
-                    {{ lang }}
+    <div class="bg-gradient-hero pt-12">
+        <div
+            class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
+        >
+            <div>
+                <h1 class="font-display text-2xl">
+                    {{ $t("floating arboretum") }}
+                </h1>
+            </div>
+            <div>
+                <button @click="switchLanguage('sk')" class="text-lg group">
+                    Slovenčina
                     <span
-                        class="block opacity-0 group-hover:opacity-100 transition h-0.5 bg-blue-darker -mt-0.5"
+                        class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
+                    ></span>
+                </button>
+                /
+                <button @click="switchLanguage('en')" class="text-lg group">
+                    English
+                    <span
+                        class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
                     ></span>
                 </button>
             </div>
