@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QrCodesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/qr', [QrCodesController::class, 'index'])->name('qr.index');
+Route::get('/qr/download', [QrCodesController::class, 'download'])->name('qr.download');
+
+Route::get('/{any}', function () {
     return view('app');
-});
+})->where('any', '.*');
