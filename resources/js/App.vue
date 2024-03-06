@@ -3,10 +3,24 @@
         <div
             class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
         >
-            <div>
+            <div class="flex">
                 <h1 class="font-display text-2xl">
                     {{ $t("floating arboretum") }}
                 </h1>
+                <nav class="ml-8 space-x-6 flex">
+                    <a href="#" class="text-lg group inline-block">
+                        About
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        ></span>
+                    </a>
+                    <a href="#" class="text-lg group">
+                        Discover stories
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-0.5 bg-blue-darker -mt-0.5"
+                        ></span>
+                    </a>
+                </nav>
             </div>
             <div>
                 <button @click="switchLanguage('sk')" class="text-lg group">
