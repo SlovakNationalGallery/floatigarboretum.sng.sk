@@ -1,20 +1,21 @@
 <template>
-    <div class="bg-gradient-hero pt-3 md:pt-12">
-        <div
-            class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
-        >
-            <div class="flex">
-                <h1 class="font-display text-2xl">
-                    {{ $t("floating arboretum") }}
-                </h1>
-                <nav class="ml-8 space-x-6 flex">
-                    <a href="#" class="text-lg group inline-block">
-                        {{ $t("About the project") }}
-                        <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                        ></span>
-                    </a>
-                    <!-- 
+    <div class="bg-gradient-hero pt-3 md:pt-6">
+        <div class="container mx-auto px-4 md:px-0">
+            <div
+                class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
+            >
+                <div class="flex">
+                    <h1 class="font-display text-2xl">
+                        {{ $t("floating arboretum") }}
+                    </h1>
+                    <nav class="hidden md:flex ml-8 space-x-6">
+                        <a href="#" class="text-lg group inline-block">
+                            {{ $t("About the project") }}
+                            <span
+                                class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            ></span>
+                        </a>
+                        <!-- 
                     <a href="#" class="text-lg group">
                         Discover stories
                         <span
@@ -28,27 +29,38 @@
                         ></span>
                     </a>
                      -->
-                </nav>
-            </div>
-            <div>
-                <button @click="switchLanguage('sk')" class="text-lg group">
-                    <span class="hidden md:inline">Slovenčina</span>
-                    <span class="md:hidden">SK</span>
-                    <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                        :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
-                    ></span>
-                </button>
-                /
-                <button @click="switchLanguage('en')" class="text-lg group">
-                    <span class="hidden md:inline">English</span>
-                    <span class="md:hidden">EN</span>
+                    </nav>
+                </div>
+                <div>
+                    <button @click="switchLanguage('sk')" class="text-lg group">
+                        <span class="hidden md:inline">Slovenčina</span>
+                        <span class="md:hidden">SK</span>
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
+                        ></span>
+                    </button>
+                    /
+                    <button @click="switchLanguage('en')" class="text-lg group">
+                        <span class="hidden md:inline">English</span>
+                        <span class="md:hidden">EN</span>
 
-                    <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                        :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
-                    ></span>
-                </button>
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
+                        ></span>
+                    </button>
+                    <button @click="isMenuOpen = !isMenuOpen" class="md:hidden">
+                        <svg
+                            class="w-6 h-auto fill-none stroke-blue-darker ml-4"
+                            viewBox="0 0 24 17"
+                        >
+                            <path d="M0.5 0.5H24" />
+                            <path d="M0.5 8.5H24" />
+                            <path d="M0.5 16.5H24" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <router-view></router-view>
@@ -63,6 +75,7 @@ import { ref } from "vue";
 import { getActiveLanguage, loadLanguageAsync } from "laravel-vue-i18n";
 
 const lang = ref(getActiveLanguage());
+const isMenuOpen = ref(false)
 
 const switchLanguage = (locale) => {
     loadLanguageAsync(locale);
