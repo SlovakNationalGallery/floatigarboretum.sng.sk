@@ -1,6 +1,13 @@
 <template>
-    <div class="bg-gradient-hero pt-3 md:pt-6">
-        <div class="container mx-auto px-4 md:px-0">
+    <div class="bg-gradient-hero">
+        <div
+            class="container mx-auto px-4 md:px-0 pt-3 md:pt-6"
+            :class="
+                isMenuOpen
+                    ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-10 left-0 top-0'
+                    : ''
+            "
+        >
             <div
                 class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
             >
@@ -50,18 +57,35 @@
                             :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
                         ></span>
                     </button>
-                    <button @click="isMenuOpen = !isMenuOpen" class="md:hidden">
+                    <button @click="toggleMenu()" class="md:hidden ml-4">
                         <svg
-                            class="w-6 h-auto fill-none stroke-blue-darker ml-4"
+                            class="w-6 h-auto fill-none stroke-blue-darker"
                             viewBox="0 0 24 17"
+                            v-if="!isMenuOpen"
                         >
                             <path d="M0.5 0.5H24" />
                             <path d="M0.5 8.5H24" />
                             <path d="M0.5 16.5H24" />
                         </svg>
+                        <svg
+                            v-else
+                            class="w-6 h-auto fill-none stroke-blue-darker"
+                            viewBox="0 0 24 19"
+                        >
+                            <path d="M3.94141 18L20.5584 1.38299" />
+                            <path d="M3.94141 1L20.5584 17.617" />
+                        </svg>
                     </button>
                 </div>
             </div>
+            <nav
+                class="mt-14 ml-8 space-y-6 text-3xl"
+                :class="isMenuOpen ? 'flex flex-col' : 'hidden'"
+            >
+                <a href="#">
+                    {{ $t("About the project") }}
+                </a>
+            </nav>
         </div>
         <router-view></router-view>
     </div>
@@ -75,11 +99,16 @@ import { ref } from "vue";
 import { getActiveLanguage, loadLanguageAsync } from "laravel-vue-i18n";
 
 const lang = ref(getActiveLanguage());
-const isMenuOpen = ref(false)
+const isMenuOpen = ref(false);
 
 const switchLanguage = (locale) => {
     loadLanguageAsync(locale);
     lang.value = locale;
+};
+
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+    console.log(isMenuOpen.value);
 };
 </script>
 
