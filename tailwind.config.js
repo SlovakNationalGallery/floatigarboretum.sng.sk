@@ -15,7 +15,7 @@ export default {
                 lighter: "#C6DCF3",
                 light: "#91B6DD",
                 DEFAULT: "#4B759A",
-                dark: "#5783A9",
+                dark: "#336087",
                 darker: "#2C4356",
             },
             orange: {

@@ -18,30 +18,17 @@
             class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
         >
             <div class="flex">
-                <h1 class="font-display text-2xl">
+                <router-link to="/" class="font-display text-2xl">
                     {{ $t("floating arboretum") }}
-                </h1>
+                </router-link>
                 <nav class="hidden md:flex ml-8 space-x-6">
-                    <a href="#" class="text-lg group inline-block">
+                    <router-link to="/about" class="text-lg group inline-block">
                         {{ $t("About the project") }}
                         <span
                             class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            :class="{ 'opacity-40': $route.path === '/about' }"
                         ></span>
-                    </a>
-                    <!-- 
-                    <a href="#" class="text-lg group">
-                        Discover stories
-                        <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                        ></span>
-                    </a>
-                    <a href="#" class="text-lg group">
-                        For visitors
-                        <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                        ></span>
-                    </a>
-                     -->
+                    </router-link>
                 </nav>
             </div>
             <div>
@@ -88,9 +75,10 @@
             class="mt-14 ml-8 space-y-6 text-3xl"
             :class="isMenuOpen ? 'flex flex-col' : 'hidden'"
         >
-            <a href="#">
+            <router-link to="/about" @click="toggleMenu()">
+                <span v-if="$route.path === '/about'" class="bg-blue-darker/30 h-px w-5 mr-0.5 align-middle inline-block"></span>
                 {{ $t("About the project") }}
-            </a>
+            </router-link>
         </nav>
     </div>
     <router-view></router-view>
@@ -99,12 +87,12 @@
     >
         <div class="">
             <div class="pb-6">
-                <a href="#" class="group inline-block pr-4">
+                <router-link to="/about" class="group inline-block pr-4">
                     {{ $t("About the project") }}
                     <span
                         class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
                     ></span>
-                </a>
+                </router-link>
             </div>
             <div class="pb-6">© 2024 lab.SNG</div>
         </div>

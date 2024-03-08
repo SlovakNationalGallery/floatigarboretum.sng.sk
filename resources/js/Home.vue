@@ -30,13 +30,11 @@
                         )
                     }}
                 </p>
-                <a
+                <router-link to="/about"
                     class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px]"
-                    href="#"
-                    download="floating_arboretum.pdf"
                 >
                     {{ $t("Find out more") }}
-                </a>
+                </router-link>
             </article>
         </div>
     </div>

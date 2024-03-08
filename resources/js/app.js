@@ -5,6 +5,7 @@ import { i18nVue } from "laravel-vue-i18n";
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "./Home.vue";
+import About from "./About.vue";
 import Detail from "./Detail.vue";
 import Trees from "./Trees.vue";
 
@@ -14,6 +15,7 @@ const app = createApp(App);
 
 const routes = [
     { path: "/", component: Home },
+    { path: "/about", component: About },
     { path: "/trees/:id", component: Detail },
     { path: "/trees", component: Trees },
 ];
