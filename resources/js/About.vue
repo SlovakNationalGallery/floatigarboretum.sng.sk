@@ -1,6 +1,8 @@
 <template>
     <div class="mx-auto container px-5 h-60 flex items-end">
-        <h1 class="font-display text-4xl md:text-5xl text-blue-dark tracking-wide max-w-48 md:max-w-full">
+        <h1
+            class="font-display text-4xl md:text-5xl text-blue-dark tracking-wide max-w-48 md:max-w-full"
+        >
             {{ $t("About the project") }}
         </h1>
     </div>
@@ -39,21 +41,26 @@
                 {{ $t("Involved Artists") }}
             </h2>
             <p class="pb-6 max-w-[800px] leading-normal md:text-xl">
-                Artist: Oto Hudec<br>
-                Curator: Lýdia Pribišová<br>
-                Commissioner: Monika Krčmárik<br>
-                Organizer: Slovak National Gallery<br>
-                Sound piece & performance: Fero Király<br>
-                Poeticization of tree stories: Juliana Sokolová<br>
-                Performers: Eva Šušková, Anna Čonková, Ivanka Chrapková, Peter Mazalán, Marek<br>
-                Kundlák, Vojtěch Šembera<br>
-                Choreography: Petra Fornayová<br>
-                Dress Designer: Michaela Bednárová<br>
-                Architect: Tomáš Boroš<br>
+                Artist: Oto Hudec<br />
+                Curator: Lýdia Pribišová<br />
+                Commissioner: Monika Krčmárik<br />
+                Organizer: Slovak National Gallery<br />
+                Sound piece & performance: Fero Király<br />
+                Poeticization of tree stories: Juliana Sokolová<br />
+                Performers: Eva Šušková, Anna Čonková, Ivanka Chrapková, Peter
+                Mazalán, Marek<br />
+                Kundlák, Vojtěch Šembera<br />
+                Choreography: Petra Fornayová<br />
+                Dress Designer: Michaela Bednárová<br />
+                Architect: Tomáš Boroš<br />
             </p>
             <p class="pb-6 max-w-[800px] leading-normal md:text-xl">
-                Oto Hudec is represented by 
-                <a href="https://www.gandy-gallery.com" class="group inline-block" target="_blank">
+                Oto Hudec is represented by
+                <a
+                    href="https://www.gandy-gallery.com"
+                    class="group inline-block"
+                    target="_blank"
+                >
                     Gandy Gallery
                     <span
                         class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
@@ -62,19 +69,55 @@
             </p>
         </article>
 
-        <h2 class="font-display text-3xl pb-4 md:text-4xl">
-            {{ $t("artist and curator") }}
+        <h2 class="text-lg pb-2 opacity-60">
+            {{ $t("Meet us") }}
         </h2>
+
         <section
             class="md:flex md:items-start md:justify-between md:gap-6 md:flex-row-reverse"
         >
-            <div class="pb-6 md:-8 lg:p-16 md:w-1/2">
+            <div class="pb-6 lg:p-16 md:w-1/2">
                 <img
                     src="./assets/oto.jpg"
                     class="md:ml-auto drop-shadow-xl max-w-72"
                 />
             </div>
-            <article class="md:w-1/2">
+
+            <ul class="w-full">
+                <li v-for="(artist, index) in artists" :key="index" class="border-b border-white/15">
+                    <button
+                        @click="toggleBio(index)"
+                        class="flex items-center justify-between w-full py-6"
+                    >
+                        <h3 class="font-display text-2xl">
+                            {{ artist.name }}
+                        </h3>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            :class="{
+                                'transform rotate-180': expandedIndex === index,
+                            }"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                    </button>
+                    <div
+                        v-if="expandedIndex === index"
+                        class="pb-6"
+                    >
+                        <p>{{ artist.bio }}</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- <article class="md:w-1/2">
                 <h3 class="font-display text-2xl pb-1 md:pb-3">
                     {{ $t("Oto Hudec, artist") }}
                 </h3>
@@ -99,7 +142,7 @@
                         )
                     }}
                 </p>
-            </article>
+            </article> -->
         </section>
         <section class="md:flex md:items-start md:justify-between md:gap-6">
             <div class="pb-6 md:-8 lg:p-16 md:w-1/2">
@@ -145,4 +188,15 @@ import { getActiveLanguage } from "laravel-vue-i18n";
 
 const lang = ref(getActiveLanguage());
 
+const artists = ref([
+    { name: "Oto Hudec", bio: "Short bio for Oto Hudec" },
+    { name: "Lýdia Pribišová", bio: "Short bio for Lýdia Pribišová" },
+    { name: "Juliana Sokolová", bio: "Short bio for Juliana Sokolová" },
+]);
+
+const expandedIndex = ref(0);
+
+const toggleBio = (index) => {
+    expandedIndex.value = expandedIndex.value === index ? -1 : index;
+};
 </script>
