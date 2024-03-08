@@ -11,6 +11,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class QrCodesController extends Controller
 {
     public $routes = [
+        '/for-visitors',
         '/trees',
         '/trees/1',
         '/trees/2',
