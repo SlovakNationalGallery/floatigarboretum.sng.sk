@@ -94,7 +94,9 @@
         </nav>
     </div>
     <router-view></router-view>
-    <footer class="text-blue-lightest container mx-auto p-6 md:flex md:justify-between">
+    <footer
+        class="text-blue-lightest container mx-auto p-6 md:flex md:justify-between"
+    >
         <div class="">
             <div class="pb-6">
                 <a href="#" class="group inline-block pr-4">
@@ -107,9 +109,13 @@
             <div class="pb-6">© 2024 lab.SNG</div>
         </div>
         <div>
-            <a href="https://kunsthallebratislava.sk" target="_blank"><img src="./assets/logo-khb.svg" alt="kunsthalle bratislava" class="w-60"></a>
+            <a href="https://kunsthallebratislava.sk" target="_blank"
+                ><img
+                    src="./assets/logo-khb.svg"
+                    alt="kunsthalle bratislava"
+                    class="w-60"
+            /></a>
         </div>
-        
     </footer>
 </template>
 
