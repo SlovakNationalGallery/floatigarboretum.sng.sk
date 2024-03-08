@@ -1,20 +1,23 @@
 <template>
-    <div class="mx-auto container">
-        <h1
-            class="pl-6 pr-12 font-display text-xl md:text-2xl pt-20 md:pl-28 md:w-[35rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
-        >
-            {{
-                $t(
-                    "Slovak National Participation 60th International Art Exhibition of La Biennale di Venezia"
-                )
-            }}
-        </h1>
+    <div class="mx-auto container px-5 pt-5 md:pt-9">
+        <div class="md:flex md:flex-row-reverse md:items-end">
+            <img src="./assets/logo-bienale.svg" class="w-28 md:w-40 ml-auto" />
+            <h1
+                class="pt-2 font-display text-xl md:text-2xl md:w-[30rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
+            >
+                {{
+                    $t(
+                        "Slovak National Participation 60th International Art Exhibition of La Biennale di Venezia"
+                    )
+                }}
+            </h1>
+        </div>
     </div>
     <img
         class="pb-12 object-cover h-96 md:mx-auto md:-mt-16"
         src="./assets/arboretum.png"
     />
-    <div class="bg-blue-light">
+    <div class="">
         <div class="container mx-auto px-6 py-12">
             <article>
                 <h2 class="font-display text-3xl pb-4 md:pb-3 md:text-6xl">

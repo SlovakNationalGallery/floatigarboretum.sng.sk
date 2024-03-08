@@ -1,28 +1,34 @@
 <template>
-    <div class="bg-gradient-hero">
+    <div class="bg-gradient-hero h-[680px] absolute top-0 left-0 w-full -z-10">
+        <img
+            src="./assets/ellipse.png"
+            class="w-full absolute top-0 h-[225px] md:h-[261px]"
+            alt="bg"
+        />
+    </div>
+    <div
+        class="container mx-auto px-4 md:px-0 pt-3 md:pt-6"
+        :class="
+            isMenuOpen
+                ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-10 left-0 top-0'
+                : ''
+        "
+    >
         <div
-            class="container mx-auto px-4 md:px-0 pt-3 md:pt-6"
-            :class="
-                isMenuOpen
-                    ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-10 left-0 top-0'
-                    : ''
-            "
+            class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
         >
-            <div
-                class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
-            >
-                <div class="flex">
-                    <h1 class="font-display text-2xl">
-                        {{ $t("floating arboretum") }}
-                    </h1>
-                    <nav class="hidden md:flex ml-8 space-x-6">
-                        <a href="#" class="text-lg group inline-block">
-                            {{ $t("About the project") }}
-                            <span
-                                class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                            ></span>
-                        </a>
-                        <!-- 
+            <div class="flex">
+                <h1 class="font-display text-2xl">
+                    {{ $t("floating arboretum") }}
+                </h1>
+                <nav class="hidden md:flex ml-8 space-x-6">
+                    <a href="#" class="text-lg group inline-block">
+                        {{ $t("About the project") }}
+                        <span
+                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        ></span>
+                    </a>
+                    <!-- 
                     <a href="#" class="text-lg group">
                         Discover stories
                         <span
@@ -36,59 +42,58 @@
                         ></span>
                     </a>
                      -->
-                    </nav>
-                </div>
-                <div>
-                    <button @click="switchLanguage('sk')" class="text-lg group">
-                        <span class="hidden md:inline">Slovenčina</span>
-                        <span class="md:hidden">SK</span>
-                        <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                            :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
-                        ></span>
-                    </button>
-                    /
-                    <button @click="switchLanguage('en')" class="text-lg group">
-                        <span class="hidden md:inline">English</span>
-                        <span class="md:hidden">EN</span>
-
-                        <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                            :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
-                        ></span>
-                    </button>
-                    <button @click="toggleMenu()" class="md:hidden ml-4">
-                        <svg
-                            class="w-6 h-auto fill-none stroke-blue-darker"
-                            viewBox="0 0 24 17"
-                            v-if="!isMenuOpen"
-                        >
-                            <path d="M0.5 0.5H24" />
-                            <path d="M0.5 8.5H24" />
-                            <path d="M0.5 16.5H24" />
-                        </svg>
-                        <svg
-                            v-else
-                            class="w-6 h-auto fill-none stroke-blue-darker"
-                            viewBox="0 0 24 19"
-                        >
-                            <path d="M3.94141 18L20.5584 1.38299" />
-                            <path d="M3.94141 1L20.5584 17.617" />
-                        </svg>
-                    </button>
-                </div>
+                </nav>
             </div>
-            <nav
-                class="mt-14 ml-8 space-y-6 text-3xl"
-                :class="isMenuOpen ? 'flex flex-col' : 'hidden'"
-            >
-                <a href="#">
-                    {{ $t("About the project") }}
-                </a>
-            </nav>
+            <div>
+                <button @click="switchLanguage('sk')" class="text-lg group">
+                    <span class="hidden md:inline">Slovenčina</span>
+                    <span class="md:hidden">SK</span>
+                    <span
+                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
+                    ></span>
+                </button>
+                /
+                <button @click="switchLanguage('en')" class="text-lg group">
+                    <span class="hidden md:inline">English</span>
+                    <span class="md:hidden">EN</span>
+
+                    <span
+                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
+                    ></span>
+                </button>
+                <button @click="toggleMenu()" class="md:hidden ml-4">
+                    <svg
+                        class="w-6 h-auto fill-none stroke-blue-darker"
+                        viewBox="0 0 24 17"
+                        v-if="!isMenuOpen"
+                    >
+                        <path d="M0.5 0.5H24" />
+                        <path d="M0.5 8.5H24" />
+                        <path d="M0.5 16.5H24" />
+                    </svg>
+                    <svg
+                        v-else
+                        class="w-6 h-auto fill-none stroke-blue-darker"
+                        viewBox="0 0 24 19"
+                    >
+                        <path d="M3.94141 18L20.5584 1.38299" />
+                        <path d="M3.94141 1L20.5584 17.617" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <router-view></router-view>
+        <nav
+            class="mt-14 ml-8 space-y-6 text-3xl"
+            :class="isMenuOpen ? 'flex flex-col' : 'hidden'"
+        >
+            <a href="#">
+                {{ $t("About the project") }}
+            </a>
+        </nav>
     </div>
+    <router-view></router-view>
     <footer class="bg-blue-dark text-blue-lightest p-6 flex md:justify-center">
         © 2024 lab.SNG
     </footer>
@@ -119,7 +124,7 @@ const toggleMenu = () => {
         #90b5dc 0%,
         #90b5dc 52.78%,
         #608db5 53.5%,
-        #4a7499 100%
+        #4b759a 100%
     );
 }
 </style>
