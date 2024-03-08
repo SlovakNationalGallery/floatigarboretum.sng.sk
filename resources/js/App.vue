@@ -7,7 +7,7 @@
         />
     </div>
     <div
-        class="container mx-auto px-4 md:px-0 pt-3 md:pt-6"
+        class="container mx-auto px-4 md:px-0 pt-3 md:pt-6 text-blue-darker"
         :class="
             isMenuOpen
                 ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-10 left-0 top-0'
@@ -94,8 +94,22 @@
         </nav>
     </div>
     <router-view></router-view>
-    <footer class="bg-blue-dark text-blue-lightest p-6 flex md:justify-center">
-        © 2024 lab.SNG
+    <footer class="text-blue-lightest container mx-auto p-6 md:flex md:justify-between">
+        <div class="">
+            <div class="pb-6">
+                <a href="#" class="group inline-block pr-4">
+                    {{ $t("About the project") }}
+                    <span
+                        class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
+                    ></span>
+                </a>
+            </div>
+            <div class="pb-6">© 2024 lab.SNG</div>
+        </div>
+        <div>
+            <a href="https://kunsthallebratislava.sk" target="_blank"><img src="./assets/logo-khb.svg" alt="kunsthalle bratislava" class="w-60"></a>
+        </div>
+        
     </footer>
 </template>
 

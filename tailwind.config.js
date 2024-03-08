@@ -9,6 +9,7 @@ export default {
     ],
     theme: {
         colors: {
+            white: "#FFFFFF",
             blue: {
                 lightest: "#F9FCFF",
                 lighter: "#C6DCF3",
