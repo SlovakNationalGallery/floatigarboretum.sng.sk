@@ -18,8 +18,8 @@
             class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
         >
             <div class="flex">
-                <router-link to="/" class="font-display text-2xl">
-                    {{ $t("floating arboretum") }}
+                <router-link to="/" class="font-display text-xl md:text-2xl">
+                    Floating arboretum
                 </router-link>
                 <nav class="hidden md:flex ml-8 space-x-6">
                     <router-link to="/about" class="text-lg group inline-block">
@@ -32,7 +32,7 @@
                 </nav>
             </div>
             <div>
-                <button @click="switchLanguage('sk')" class="text-lg group">
+                <button @click="switchLanguage('sk')" class="md:text-lg group">
                     <span class="hidden md:inline">Slovenčina</span>
                     <span class="md:hidden">SK</span>
                     <span

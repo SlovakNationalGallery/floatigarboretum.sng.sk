@@ -1,7 +1,7 @@
 <template>
     <li class="border-b border-white/15">
         <button @click="toggleBio" class="flex items-center justify-between w-full py-6 group">
-            <h3 class="font-display text-2xl text-left">
+            <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
                 {{ name }}<span v-if="role">, {{ $t(role) }}</span>
             </h3>
             <div class="ml-4 shrink-0 w-9 h-9 bg-blue-lighter/60 group-hover:bg-blue-lighter/40 transition-colors rounded-full flex items-center justify-center">
