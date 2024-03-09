@@ -141,21 +141,6 @@
                         ></span>
                     </a>
                 </ArtistItem>
-                <ArtistItem name="Samuel Čarnoký">
-                    <p class="pb-6 max-w-prose">
-                        {{
-                            $t(
-                                "(born 1981 in Krompachy, Slovakia) is a graphic and type designer and a lecturer. He is a graduate of the studio Visual Communication at the Faculty of Arts of the Technical University of Košice (2006) and has worked there as a teacher since 2009. He continued to doctoral studies at the Faculty of Arts in Košice (2012–2015), during which he completed an internship at the Studio of Type Design and Typography at the Academy of Applied Arts in Prague (2013–2014). He has participated at many creative workshops and arts symposia, as well as at individual and collective exhibitions and presentations in Slovakia and abroad. He has presented his work in a series of presentations, including Eastern Design Conference, TEDx, BRAK, PechaKucha Night, and TypoKucha. As a freelance graphic designer, he focuses on type design, typography, and editorial design, and since 2010 has been designing and publishing his own typefaces under the type foundry CarnokyType. He also actively cooperates with LTTR/CORP on the creation of skeleton fonts using the digital tool LTTR/INK. He is the author of the publications about typography in Slovakia Fonts SK / Digitized type design in Slovakia (2018) and Neon lights and advertising typography in eastern Slovakia till 1989 (Co-author Radoslav Sinčák, 2014). He was awarded at Slovak Design Award – Communication Design (2016, 2018) and at The Most Beautiful Books of Slovakia (2021, 2022). He lives and works in the east of Slovakia."
-                            )
-                        }}
-                    </p>
-                    <a href="https://carnokytype.com" class="group inline-block" target="_blank">
-                        carnokytype.com
-                        <span
-                            class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
-                        ></span>
-                    </a>
-                </ArtistItem>
                 <ArtistItem name="Petra Fornayová" role="choreography">
                     <p class="pb-6 max-w-prose">
                         {{
@@ -175,7 +160,7 @@
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
-                                "(born 1979 in Košice, Slovakia) is an artist, pianist, and composer who has performed in countries including the USA, Croatia, UK, Norway, Poland, Denmark, and Germany. He engages in art projects that span performance, sound art, and installations, and conducts educational initiatives in the realm of sound and interactivity. He likes to collaborate with other artists, particularly those with a multidisciplinary focus. He creates compositions, audio-visual works, and sound installations, exploring themes related to language, computation, digital physics, and stories we create for ourselves. His work frequently explores similarities in the processes of computation and language, highlighting their parallel nature. Since 2009, he has co-led the Cluster ensemble, a musical collective dedicated to contemporary and minimal music. The ensemble has earned several awards and positive reviews, most notably for their album 'Cluster ensemble Plays Philip Glass', released by Orange Mountain Music in 2016. From 2016 onwards, Király, together with Eva Vozárová, has been involved in artistic projects as part of collective "
+                                "(born 1979 in Košice, Slovakia) is an artist, pianist, and composer who has performed in countries including the USA, Croatia, UK, Norway, Poland, Denmark, and Germany. He engages in art projects that span performance, sound art, and installations, and conducts educational initiatives in the realm of sound and interactivity. He likes to collaborate with other artists, particularly those with a multidisciplinary focus. He creates compositions, audio-visual works, and sound installations, exploring themes related to language, computation, digital physics, and stories we create for ourselves. His work frequently explores similarities in the processes of computation and language, highlighting their parallel nature. Since 2009, he has co-led the Cluster ensemble, a musical collective dedicated to contemporary and minimal music. The ensemble has earned several awards and positive reviews, most notably for their album 'Cluster ensemble Plays Philip Glass', released by Orange Mountain Music in 2016. From 2016 onwards, Király, together with Eva Vozárová, has been involved in artistic projects as part of collective"
                             )
                         }}
                         <a href="https://zdruzenie.ooo" class="group inline-block" target="_blank">
