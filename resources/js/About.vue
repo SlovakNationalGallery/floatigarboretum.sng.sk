@@ -84,7 +84,11 @@
             </div>
 
             <ul class="w-full">
-                <li v-for="(artist, index) in artists" :key="index" class="border-b border-white/15">
+                <li
+                    v-for="(artist, index) in artists"
+                    :key="index"
+                    class="border-b border-white/15"
+                >
                     <button
                         @click="toggleBio(index)"
                         class="flex items-center justify-between w-full py-6"
@@ -92,26 +96,26 @@
                         <h3 class="font-display text-2xl">
                             {{ artist.name }}
                         </h3>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
-                            :class="{
-                                'transform rotate-180': expandedIndex === index,
-                            }"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
+                        <div class="w-9 h-9 bg-blue-lighter/60 rounded-full flex items-center justify-center">
+                            <svg
+                                class="w-6 h-6 fill-none stroke-blue-darker"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M4 12L20 12"
+                                    stroke-linecap="square"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    v-if="expandedIndex !== index"
+                                    d="M12 4V20"
+                                    stroke-linecap="square"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
                     </button>
-                    <div
-                        v-if="expandedIndex === index"
-                        class="pb-6"
-                    >
+                    <div v-if="expandedIndex === index" class="pb-6">
                         <p>{{ artist.bio }}</p>
                     </div>
                 </li>
