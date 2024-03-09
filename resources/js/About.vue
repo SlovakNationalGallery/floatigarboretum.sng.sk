@@ -66,6 +66,7 @@
 
         <section class="md:flex md:items-start md:justify-between md:gap-6 md:flex-row-reverse">
             <div class="pb-6 lg:p-16 md:w-1/2">
+                <!-- @todo: clarify how the artist photo should behave -->
                 <img src="./assets/oto.jpg" class="md:ml-auto drop-shadow-xl max-w-72" />
             </div>
 
