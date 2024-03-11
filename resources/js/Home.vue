@@ -1,22 +1,17 @@
 <template>
     <div class="mx-auto container px-5 pt-5 md:pt-9">
         <div class="md:flex md:flex-row-reverse md:items-end">
-            <img src="./assets/logo-bienale.svg" class="w-28 md:w-40 ml-auto" />
+            <a href="https://www.labiennale.org/it/arte/2024" target="_blank" class="contents group">
+                <img src="./assets/logo-bienale.svg" class="w-28 md:w-40 ml-auto group-hover:opacity-85 transition-opacity" />
+            </a>
             <h1
                 class="pt-2 font-display text-xl md:text-2xl md:w-[30rem] text-blue blur-[0.5px] opacity-90 tracking-wide"
             >
-                {{
-                    $t(
-                        "Slovak National Participation 60th International Art Exhibition of La Biennale di Venezia"
-                    )
-                }}
+                {{ $t("Slovak National Participation 60th International Art Exhibition of La Biennale di Venezia") }}
             </h1>
         </div>
     </div>
-    <img
-        class="pb-12 object-cover h-96 md:mx-auto md:-mt-16"
-        src="./assets/arboretum.png"
-    />
+    <img class="pb-12 object-cover h-96 md:mx-auto md:-mt-16" src="./assets/arboretum.png" />
     <div class="">
         <div class="container mx-auto px-6 py-12">
             <article>
@@ -30,7 +25,8 @@
                         )
                     }}
                 </p>
-                <router-link to="/about"
+                <router-link
+                    to="/about"
                     class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px]"
                 >
                     {{ $t("Find out more") }}
