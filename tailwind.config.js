@@ -9,13 +9,14 @@ export default {
     ],
     theme: {
         colors: {
+            white: "#FFFFFF",
             blue: {
                 lightest: "#F9FCFF",
-                lighter: "#90B5DC",
-                light: "#E0EEFD",
-                DEFAULT: "#4A7499",
-                dark: "#5783A9",
-                darker: "#1B3346",
+                lighter: "#C6DCF3",
+                light: "#91B6DD",
+                DEFAULT: "#4B759A",
+                dark: "#336087",
+                darker: "#2C4356",
             },
             orange: {
                 50: "#fef8ee",

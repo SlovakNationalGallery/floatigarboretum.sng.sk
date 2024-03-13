@@ -22,7 +22,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-blue-dark text-blue-darker text-lg">
+<body class="bg-blue text-white text-lg h-full">
     @if (app()->environment('production'))
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GVGFQX7"
