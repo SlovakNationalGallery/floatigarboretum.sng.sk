@@ -11,7 +11,12 @@
             </h1>
         </div>
     </div>
-    <img class="pb-12 object-cover h-96 md:mx-auto md:-mt-16" src="./assets/arboretum.png" />
+    <div class="h-96 w-full border-1 relative">
+        <img src="./assets/trees/tree-05.png" srcset="./assets/trees/tree-05.png 1x, ./assets/trees/tree-05@2x.png 2x" class="absolute top-[183px] left-[124px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float1" />
+        <img src="./assets/trees/tree-10.png" srcset="./assets/trees/tree-10.png 1x, ./assets/trees/tree-10@2x.png 2x" class="absolute top-[35px] left-[246px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float2" />
+        <img src="./assets/trees/tree-06.png" srcset="./assets/trees/tree-06.png 1x, ./assets/trees/tree-06@2x.png 2x" class="absolute top-[138px] left-[351px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float1" />
+    </div>
+    <!-- <img class="pb-12 object-cover h-96 md:mx-auto md:-mt-16" src="./assets/arboretum.png" /> -->
     <div class="">
         <div class="container mx-auto px-6 py-12">
             <article>

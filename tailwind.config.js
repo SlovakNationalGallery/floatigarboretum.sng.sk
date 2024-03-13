@@ -36,7 +36,24 @@ export default {
                 xl: "10px 14px 24px 0px rgba(7, 33, 60, 0.22)",
             },
         },
-        extend: {},
+        extend: {
+            keyframes: {
+                float1: {
+                  '0%': { transform: 'translateY(0px)' },
+                  '50%': { transform: 'translateY(-7px)' },
+                  '100%': { transform: 'translateY(0px)' },
+                },
+                float2: {
+                    '0%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-5px)' },
+                    '100%': { transform: 'translateY(0px)' },
+                },
+              },
+              animation: {
+                'float1': 'float1 4s ease-in-out infinite',
+                'float2': 'float2 4.5s ease-in-out infinite',
+              },
+        },
         fontFamily: {
             sans: ["Oto Sans", ...defaultTheme.fontFamily.sans],
             display: "Oto Hand",
