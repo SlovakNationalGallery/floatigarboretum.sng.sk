@@ -38,19 +38,29 @@
             <h2 class="text-lg pb-2 opacity-60">
                 {{ $t("Involved Artists") }}
             </h2>
-            <p class="pb-6 max-w-[800px] leading-normal md:text-xl">
-                Artist: Oto Hudec<br />
-                Curator: Lýdia Pribišová<br />
-                Commissioner: Monika Krčmárik<br />
-                Organizer: Slovak National Gallery<br />
-                Sound piece & performance: Fero Király<br />
-                Poeticization of tree stories: Juliana Sokolová<br />
-                Performers: Eva Šušková, Anna Čonková, Ivanka Chrapková, Peter Mazalán, Marek<br />
-                Kundlák, Vojtěch Šembera<br />
-                Choreography: Petra Fornayová<br />
-                Dress Designer: Michaela Bednárová<br />
-                Architect: Tomáš Boroš<br />
-            </p>
+            <ul class="pb-6 max-w-[800px] md:text-xl">
+                <li>{{$t('Artist')}}: Oto Hudec</li>
+                <li>{{$t('Curator')}}: Lýdia Pribišová</li>
+                <li>{{$t('Commissioner')}}: Monika Krčmárik</li>
+                <li>{{$t('Organizer')}}: Slovak National Gallery</li>
+                <li>{{$t('Sound piece & performance')}}: Fero Király</li>
+                <li>{{$t('Poeticisation of tree stories')}}: Juliana Sokolová</li>
+                <li>{{$t('Performers')}}: Eva Šušková, Anna Čonková, Ivanka Chrapková, Peter Mazalán, Marek Kundlák, Vojtěch
+                    Šembera
+                </li>
+                <li>{{$t('Choreography')}}: Petra Fornayová</li>
+                <li>{{$t('Costume Designer')}}: Michaela Bednárová</li>
+                <li>{{$t('Architect')}}: Tomáš Boroš</li>
+                <li>{{$t('Boat construction and installation')}}: Róbert Bernáth, Sarah Hreščáková, Oto Hudec</li>
+                <li>{{$t('Nástenné maľby')}}: Viktor Fehér, Michal Turkovič, Oto Hudec</li>
+                <li>{{$t('Pine cone stone carving')}}: Juraj Parák, Maroš Parák</li>
+                <li>{{$t('Graphic design')}}: Samuel Čarnoký</li>
+                <li>{{$t('Technical assistance')}}: Peter Beňo</li>
+                <li>{{$t('Editors')}}: Miroslava Plesníková, Luďka Kratochvílová, Beata Bradford</li>
+                <li>{{$t('Web application')}}: lab.SNG (Alena Pôbišová, Gorazd Ratulovský, Igor Rjabinin, František Michal
+                    Sebestyén)
+                </li>
+            </ul>
             <p class="max-w-[800px] leading-normal md:text-xl">
                 Oto Hudec is represented by
                 <a href="https://www.gandy-gallery.com" class="group inline-block" target="_blank">
