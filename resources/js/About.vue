@@ -117,7 +117,15 @@
                         }}
                     </p>
                 </ArtistItem>
-                <ArtistItem name="Juliana Sokolová"></ArtistItem>
+                <ArtistItem name="Juliana Sokolová">
+                    <p class="pb-6 max-w-prose">
+                        {{
+                            $t(
+                                "(1981, Košice) is a poet and essayist who works in Slovak and English. She is the author of two books of poems and numerous essays. Located at the intersection of the sociological and the mythological, her latest book of poems, Domáce práce (Literárna bašta, 2023), explores what it is we touch while doing housework: a darkness that is both prehistoric and lying in wait. She performed a cycle of poems, Household gods, from the English version of the manuscript at the Radialsystem in Berlin in July 2023. Her first book of poems, My house will have a roof (Fra, 2013, published bilingually), explored the relationship between grief and language, grieving and speaking. She has worked closely with artists internationally, contributing writing to monographs and exhibition catalogues. She works as programme curator at the legendary cinema Kino Úsmev in Košice, Slovakia, and was part of the collective that campaigned for, restored, and reopened the cinema. She co-founded the writers-run residency programme Literary Residencies Košice. Sokolová studied philosophy at the University of York and at King’s College London. From 2010–2019 she taught philosophy at the Faculty of Arts at the TU Košice. She is currently a PhD researcher in architectural theory at the Academy of Fine Arts in Prague and is working on her third book, The Truth about Septimus Severus & I. Existing between three languages, Hungarian, Slovak, and English, she frequently reflects on language and dislocation."
+                            )
+                        }}
+                    </p>
+                </ArtistItem>
                 <ArtistItem name="Michaela Bednárová" role="dress designer">
                     <p class="pb-6 max-w-prose">
                         {{
@@ -168,8 +176,8 @@
                             ooo
                             <span
                                 class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
-                            ></span>
-                        </a>.
+                            ></span> </a
+                        >.
                     </p>
                     <p class="pb-6 max-w-prose">
                         {{
@@ -190,5 +198,4 @@ import { getActiveLanguage } from "laravel-vue-i18n";
 import ArtistItem from "./components/ArtistItem.vue";
 
 const lang = ref(getActiveLanguage());
-
 </script>
