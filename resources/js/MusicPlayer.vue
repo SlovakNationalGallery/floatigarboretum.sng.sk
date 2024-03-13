@@ -2,7 +2,7 @@
     <div
         class="flex items-center justify-between px-3 py-3 bg-orange rounded-full space-x-2"
     >
-        <div class="flex items-center space-x-1 w-full">
+        <div v-if="wasStarted" class="flex items-center space-x-1 w-full">
             <div class="text-sm text-gray-500 w-12 text-center">
                 {{ formattedTime }}
             </div>
@@ -14,7 +14,7 @@
                 @pointerup="seekDown"
             >
                 <SliderTrack
-                    class="bg-slider relative grow rounded-full h-0.5"
+                    class="bg-[#c87933] relative grow rounded-full h-0.5"
                 >
                     <SliderRange
                         class="absolute bg-blue-darker rounded-full h-0.5"
@@ -28,6 +28,9 @@
                 {{ formattedDuration }}
             </div>
         </div>
+        <div v-else>
+            <span class="uppercase font-display">{{ $t('Play story') }}</span>
+        </div>
         <div class="flex items-center space-x-2">
             <button
                 @click="playPause"
@@ -38,9 +41,8 @@
                     v-if="!isPlaying"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 256 256"
-                    class="w-6 h-6 stroke-blue-lightest"
+                    class="w-6 h-6 stroke-blue-lightest fill-none"
                 >
-                    <rect width="256" height="256" fill="none" />
                     <path
                         d="M72,39.88V216.12a8,8,0,0,0,12.15,6.69l144.08-88.12a7.82,7.82,0,0,0,0-13.38L84.15,33.19A8,8,0,0,0,72,39.88Z"
                         fill="none"
@@ -53,9 +55,8 @@
                     v-if="isPlaying"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 256 256"
-                    class="w-6 h-6 stroke-blue-lightest"
+                    class="w-6 h-6 stroke-blue-lightest fill-none"
                 >
-                    <rect width="256" height="256" fill="none" />
                     <rect
                         x="152"
                         y="40"
@@ -88,16 +89,18 @@
 import { ref, computed } from "vue";
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
 
-const audio = ref(new Audio(new URL(`assets/audio/test.mp3`, import.meta.url)));
+const audio = ref(new Audio(new URL(`assets/audio/0.mp3`, import.meta.url)));
 const isPlaying = ref(false);
 const currentTime = ref([0]);
 const duration = ref(0);
 const isSeeking = ref(false);
+const wasStarted = ref(false);
 
 const playPause = () => {
     if (isPlaying.value) {
         audio.value.pause();
     } else {
+        wasStarted.value = true;
         audio.value.play();
     }
     isPlaying.value = !isPlaying.value;
@@ -130,5 +133,12 @@ audio.value.addEventListener("loadedmetadata", () => {
 audio.value.addEventListener("timeupdate", () => {
     if (isSeeking.value) return;
     currentTime.value = [audio.value.currentTime];
+});
+
+audio.value.addEventListener('ended', () => {
+    isPlaying.value = false;
+    wasStarted.value = false;
+    audio.value.pause();
+    audio.value.currentTime = 0;
 });
 </script>

@@ -31,7 +31,6 @@ export default {
                 950: "#40180a",
                 DEFAULT: "#f0892e",
             },
-            slider: "#c87933",
             dropShadow: {
                 xl: "10px 14px 24px 0px rgba(7, 33, 60, 0.22)",
             },
