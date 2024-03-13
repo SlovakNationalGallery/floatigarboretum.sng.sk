@@ -81,7 +81,7 @@
             </div>
 
             <ul class="w-full">
-                <ArtistItem name="Oto Hudec" role="artist" expanded="1">
+                <ArtistItem name="Oto Hudec" role="Artist" expanded="1">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -104,7 +104,7 @@
                         }}
                     </p>
                 </ArtistItem>
-                <ArtistItem name="Lýdia Pribišová" role="curator">
+                <ArtistItem name="Lýdia Pribišová" role="Curator">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -127,7 +127,7 @@
                         }}
                     </p>
                 </ArtistItem>
-                <ArtistItem name="Juliana Sokolová">
+                <ArtistItem name="Juliana Sokolová" role="Poet and essayist">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -136,7 +136,7 @@
                         }}
                     </p>
                 </ArtistItem>
-                <ArtistItem name="Michaela Bednárová" role="dress designer">
+                <ArtistItem name="Michaela Bednárová" role="Textile designer">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -145,7 +145,7 @@
                         }}
                     </p>
                 </ArtistItem>
-                <ArtistItem name="Samuel Čarnoký">
+                <ArtistItem name="Samuel Čarnoký" role="Graphic design">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -160,7 +160,7 @@
                         ></span>
                     </a>
                 </ArtistItem>
-                <ArtistItem name="Petra Fornayová" role="choreography">
+                <ArtistItem name="Petra Fornayová" role="Choreography">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
@@ -175,7 +175,7 @@
                         ></span>
                     </a>
                 </ArtistItem>
-                <ArtistItem name="Fero Király" role="sound piece & performance">
+                <ArtistItem name="Fero Király" role="Sound piece & performance">
                     <p class="pb-6 max-w-prose">
                         {{
                             $t(
