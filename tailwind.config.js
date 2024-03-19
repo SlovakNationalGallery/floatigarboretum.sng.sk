@@ -48,10 +48,16 @@ export default {
                     '50%': { transform: 'translateY(-5px)' },
                     '100%': { transform: 'translateY(0px)' },
                 },
+                float3: {
+                    '0%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-3px)' },
+                    '100%': { transform: 'translateY(0px)' },
+                },
               },
               animation: {
                 'float1': 'float1 4s ease-in-out infinite',
                 'float2': 'float2 4.5s ease-in-out infinite',
+                'float3': 'float1 5s ease-in-out infinite',
               },
         },
         fontFamily: {

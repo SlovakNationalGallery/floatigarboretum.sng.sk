@@ -18,17 +18,52 @@
         <img
             src="./assets/trees/tree-05.png"
             srcset="./assets/trees/tree-05.png 1x, ./assets/trees/tree-05@2x.png 2x"
-            class="absolute top-[183px] left-[124px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float1 hover:pause"
+            class="absolute top-[76px] left-[49px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float2 hover:pause"
         />
         <img
             src="./assets/trees/tree-10.png"
             srcset="./assets/trees/tree-10.png 1x, ./assets/trees/tree-10@2x.png 2x"
-            class="absolute top-[35px] left-[246px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float2 hover:pause"
+            class="absolute top-[136px] left-[220px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float3 hover:pause"
         />
         <img
             src="./assets/trees/tree-06.png"
             srcset="./assets/trees/tree-06.png 1x, ./assets/trees/tree-06@2x.png 2x"
-            class="absolute top-[138px] left-[351px] drop-shadow-lg hover:cursor-pointer hover:opacity-80 animate-float1 hover:pause"
+            class="absolute top-[159px] left-[295px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float1 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-01.png"
+            srcset="./assets/trees/tree-01.png 1x, ./assets/trees/tree-01@2x.png 2x"
+            class="absolute top-[67px] left-[396px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float2 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-08.png"
+            srcset="./assets/trees/tree-08.png 1x, ./assets/trees/tree-08@2x.png 2x"
+            class="absolute -top-[90px] left-[517px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float3 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-04.png"
+            srcset="./assets/trees/tree-04.png 1x, ./assets/trees/tree-04@2x.png 2x"
+            class="absolute top-[136px] left-[678px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float3 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-03.png"
+            srcset="./assets/trees/tree-03.png 1x, ./assets/trees/tree-03@2x.png 2x"
+            class="absolute top-[77px] left-[821px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float2 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-02.png"
+            srcset="./assets/trees/tree-02.png 1x, ./assets/trees/tree-02@2x.png 2x"
+            class="absolute top-[91px] left-[954px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float3 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-07.png"
+            srcset="./assets/trees/tree-07.png 1x, ./assets/trees/tree-07@2x.png 2x"
+            class="absolute -top-[18px] left-[1106px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float2 hover:pause"
+        />
+        <img
+            src="./assets/trees/tree-09.png"
+            srcset="./assets/trees/tree-09.png 1x, ./assets/trees/tree-09@2x.png 2x"
+            class="absolute top-[91px] left-[1251px] drop-shadow-lg hover:cursor-pointer hover:opacity-90 transition hover:drop-shadow-2xl animate-float3 hover:pause"
         />
     </div>
     <!-- <img class="pb-12 object-cover h-96 md:mx-auto md:-mt-16" src="./assets/arboretum.png" /> -->
