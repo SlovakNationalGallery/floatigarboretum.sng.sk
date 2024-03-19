@@ -29,6 +29,13 @@
                             :class="($route.path === '/about') ? 'opacity-40' : 'opacity-0'"
                         ></span>
                     </router-link>
+                    <router-link to="/for-visitors" class="text-lg group inline-block">
+                        {{ $t("For visitors") }}
+                        <span
+                            class="block group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            :class="($route.path === '/for-visitors') ? 'opacity-40' : 'opacity-0'"
+                        ></span>
+                    </router-link>
                 </nav>
             </div>
             <div>
@@ -79,6 +86,10 @@
                 <span v-if="$route.path === '/about'" class="bg-blue-darker/30 h-px w-5 mr-0.5 align-middle inline-block"></span>
                 {{ $t("About the project") }}
             </router-link>
+            <router-link to="/for-visitors" @click="toggleMenu()">
+                <span v-if="$route.path === '/for-visitors'" class="bg-blue-darker/30 h-px w-5 mr-0.5 align-middle inline-block"></span>
+                {{ $t("For visitors") }}
+            </router-link>
         </nav>
     </div>
     <router-view></router-view>
@@ -93,6 +104,13 @@
                         class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
                     ></span>
                 </router-link>
+                <router-link to="/for-visitors" class="group inline-block pr-4">
+                    {{ $t("For visitors") }}
+                    <span
+                        class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"
+                    ></span>
+                </router-link>
+
             </div>
             <div class="pb-6">© 2024 lab.SNG</div>
         </div>
