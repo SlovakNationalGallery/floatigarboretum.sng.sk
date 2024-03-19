@@ -14,7 +14,7 @@
             </h1>
         </div>
     </div>
-    <div class="h-96 w-full relative">
+    <div class="h-96 w-full relative" ref="arboretumContainer">
         <img
             src="./assets/trees/tree-05.png"
             srcset="./assets/trees/tree-05.png 1x, ./assets/trees/tree-05@2x.png 2x"
@@ -90,3 +90,21 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+
+const arboretumContainer = ref(null);
+
+onMounted(() => {
+    setOffset();
+    window.addEventListener("resize", setOffset);
+});
+
+const setOffset = () => {
+    if (arboretumContainer.value.offsetWidth < 1440) {
+        const offset = (1440 - arboretumContainer.value.offsetWidth) / 2;
+        arboretumContainer.value.style.left = `-${offset}px`;
+    }
+};
+</script>
