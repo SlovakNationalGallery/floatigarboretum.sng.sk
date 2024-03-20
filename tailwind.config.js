@@ -2,11 +2,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
+    content: ["./resources/**/*.blade.php", "./resources/**/*.js", "./resources/**/*.vue"],
     theme: {
         colors: {
             white: "#FFFFFF",
@@ -53,12 +49,22 @@ export default {
                     '50%': { transform: 'translateY(-3px)' },
                     '100%': { transform: 'translateY(0px)' },
                 },
-              },
-              animation: {
+                slideDown: {
+                    from: { height: 0 },
+                    to: { height: "var(--radix-accordion-content-height)" },
+                },
+                slideUp: {
+                    from: { height: "var(--radix-accordion-content-height)" },
+                    to: { height: 0 },
+                },
+            },
+            animation: {
                 'float1': 'float1 4s ease-in-out infinite',
                 'float2': 'float2 4.5s ease-in-out infinite',
                 'float3': 'float1 5s ease-in-out infinite',
-              },
+                slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+                slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+            },
         },
         fontFamily: {
             sans: ["Oto Sans", ...defaultTheme.fontFamily.sans],

@@ -15,7 +15,7 @@
         "
     >
         <div
-            class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-[50px]"
+            class="px-6 pt-5 pb-4 flex justify-between items-center container mx-auto bg-blue-lighter/60 rounded-full"
         >
             <div class="flex">
                 <router-link to="/" class="font-display text-xl md:text-2xl">
@@ -25,8 +25,8 @@
                     <router-link to="/about" class="text-lg group inline-block">
                         {{ $t("About the project") }}
                         <span
-                            class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
-                            :class="{ 'opacity-40': $route.path === '/about' }"
+                            class="block group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                            :class="($route.path === '/about') ? 'opacity-40' : 'opacity-0'"
                         ></span>
                     </router-link>
                 </nav>
@@ -36,7 +36,7 @@
                     <span class="hidden md:inline">Slovenčina</span>
                     <span class="md:hidden">SK</span>
                     <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        class="block group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         :class="lang === 'sk' ? 'opacity-40' : 'opacity-0'"
                     ></span>
                 </button>
@@ -46,11 +46,11 @@
                     <span class="md:hidden">EN</span>
 
                     <span
-                        class="block opacity-0 group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
+                        class="block group-hover:opacity-40 transition h-px bg-blue-darker -mt-px"
                         :class="lang === 'en' ? 'opacity-40' : 'opacity-0'"
                     ></span>
                 </button>
-                <button @click="toggleMenu()" class="md:hidden ml-4">
+                <button @click="toggleMenu" class="md:hidden ml-4">
                     <svg
                         class="w-6 h-auto fill-none stroke-blue-darker"
                         viewBox="0 0 24 17"
@@ -121,7 +121,6 @@ const switchLanguage = (locale) => {
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
-    console.log(isMenuOpen.value);
 };
 </script>
 
