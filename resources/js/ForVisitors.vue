@@ -18,7 +18,7 @@
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
             </section>
-            <section class="mb-4">
+            <section class="mb-4 mt-6">
                 <h2 class="pb-2 opacity-60">
                     {{ $t("Schedule of performances during preview") }}
                 </h2>
