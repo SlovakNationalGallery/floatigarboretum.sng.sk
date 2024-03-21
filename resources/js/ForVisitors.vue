@@ -23,21 +23,21 @@
                     {{ $t("Schedule of performances during preview") }}
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("17.4") }}</span>
+                    <span class="font-display text-2xl">{{ $t("17.4.") }}</span>
                     <span class="text-xl">{{ formatTime("1400") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("18.4") }}</span>
+                    <span class="font-display text-2xl">{{ $t("18.4.") }}</span>
                     <span class="text-xl">{{ formatTime("1700") }} - {{ formatTime("1900") }} {{ $t("(TBA)") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("19.4") }}</span>
+                    <span class="font-display text-2xl">{{ $t("19.4.") }}</span>
                     <span class="text-xl"
                         >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
                         {{ formatTime("1700") }}</span
