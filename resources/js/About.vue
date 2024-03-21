@@ -19,14 +19,14 @@
         </article>
         <div class="pb-10 flex flex-col gap-3 md:flex-row">
             <a
-                class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition text-center rounded-[70px]"
+                class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-red hover:border-red transition text-center rounded-[70px]"
                 :href="`downloads/curator_text_${lang}.pdf`"
                 download="floating_arboretum.pdf"
             >
                 {{ $t("the curator's text") }}
             </a>
             <a
-                class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition text-center rounded-[70px]"
+                class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-red hover:border-red transition text-center rounded-[70px]"
                 :href="`downloads/julia_hill_interview_${lang}.pdf`"
                 download="julia_hill_interview.pdf"
             >
