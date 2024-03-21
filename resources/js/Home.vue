@@ -14,7 +14,10 @@
             </h1>
         </div>
     </div>
-    <div class="w-screen overflow-x-auto overflow-y-visible h-[500px] z-10 absolute top-52" ref="arboretumWrapper">
+    <div
+        class="w-screen overflow-x-auto overflow-y-visible h-[600px] z-10 absolute top-52 scrollbar-hide"
+        ref="arboretumWrapper"
+    >
         <div class="h-96 w-[1440px] mx-auto relative z-10" ref="arboretumContainer">
             <img
                 src="./assets/trees/tree-05.png"
@@ -103,27 +106,19 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { ScrollAreaRoot, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport } from "radix-vue";
 
 const arboretumContainer = ref(null);
-const useHorizontalScroll = ref(false);
 const arboretumWrapper = ref(null);
 
 onMounted(() => {
-    setOffset();
-    window.addEventListener("resize", setOffset);
+    adjustScroll();
+    window.addEventListener("resize", adjustScroll);
 });
 
-const setOffset = () => {
-    if (arboretumWrapper.value.offsetWidth < 1440) {
-        useHorizontalScroll.value = true;
-        const offset = (1440 - arboretumWrapper.value.offsetWidth) / 2;
-        arboretumWrapper.value.scrollLeft = offset;
-        console.log(arboretumWrapper.value.offsetWidth);
-    } else {
-        useHorizontalScroll.value = false;
-        arboretumWrapper.value.scrollLeft = "0px";
-        console.log(arboretumWrapper.value.offsetWidth);
-    }
+const adjustScroll = () => {
+    const useHorizontalScroll = arboretumWrapper.value.offsetWidth < arboretumContainer.value.offsetWidth;
+    arboretumWrapper.value.scrollLeft = useHorizontalScroll
+        ? (arboretumContainer.value.offsetWidth - arboretumWrapper.value.offsetWidth) / 2
+        : 0;
 };
 </script>
