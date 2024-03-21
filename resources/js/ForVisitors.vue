@@ -12,7 +12,7 @@
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("18.4") }}</span>
-                    <span class="text-xl">{{ $t("4:30 p.m.") }}</span>
+                    <span class="text-xl">{{ formatTime("1630") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
@@ -24,21 +24,24 @@
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("17.4") }}</span>
-                    <span class="text-xl">{{ $t("2:00 p.m.") }}</span>
+                    <span class="text-xl">{{ formatTime("1400") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("18.4") }}</span>
-                    <span class="text-xl">{{ $t("between 5:00 – 7:00 p.m.") }}</span>
+                    <span class="text-xl">{{ formatTime("1700") }} - {{ formatTime("1900") }} {{ $t("(TBA)") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("19.4") }}</span>
-                    <span class="text-xl">{{ $t("at 12:00, 3:00, 5:00 p.m.") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
@@ -57,8 +60,8 @@
                         <span class="text-base">{{ $t("from 20 April to 30 September") }}</span>
                     </div>
                     <div class="flex flex-col md:flex-row md:gap-2">
-                        <span>{{ $t("11 a.m. – 7 p.m.") }}</span>
-                        <span>{{ $t("(last admission 6:45 p.m.)") }}</span>
+                        <span>{{ formatTime("1100") }} – {{ formatTime("1900") }}</span>
+                        <span>({{ $t("last admission") }} {{ formatTime("1845") }})</span>
                     </div>
                 </div>
                 <Separator
@@ -70,8 +73,8 @@
                         <span class="text-base">{{ $t("from 1 October to 24 November") }}</span>
                     </div>
                     <div class="flex flex-col md:flex-row md:gap-2">
-                        <span>{{ $t("10 a.m. – 6 p.m.") }}</span>
-                        <span>{{ $t("(last admission 6:45 p.m.)") }}</span>
+                        <span>{{ formatTime("1000") }} - {{ formatTime("1800") }}</span>
+                        <span>({{ $t("last admission") }} {{ formatTime("1745") }})</span>
                     </div>
                 </div>
                 <Separator
@@ -98,42 +101,60 @@
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("14.4. – 22.4.2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("20.5. – 27.5.2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("17.6. – 24.6. 2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("22.7. – 29.7.2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("19.8. – 26.8.2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("23.9. – 30.9. 2024") }}</span>
-                    <span class="text-xl">{{ $t("at 12.00, 15.00, 17.00") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1700") }}</span
+                    >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
@@ -145,5 +166,8 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { Separator } from "radix-vue";
+import moment from "moment";
+const formatTime = computed(() => (time) => moment(time, "HHmm").format("HH:mm"));
 </script>
