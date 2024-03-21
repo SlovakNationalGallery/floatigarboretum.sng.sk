@@ -46,7 +46,7 @@ export default {
                 },
                 float3: {
                     '0%': { transform: 'translateY(0px)' },
-                    '50%': { transform: 'translateY(-3px)' },
+                    '50%': { transform: 'translateY(-4px)' },
                     '100%': { transform: 'translateY(0px)' },
                 },
                 slideDown: {
@@ -59,9 +59,9 @@ export default {
                 },
             },
             animation: {
-                'float1': 'float1 4s ease-in-out infinite',
-                'float2': 'float2 4.5s ease-in-out infinite',
-                'float3': 'float1 5s ease-in-out infinite',
+                float1: "float1 4s ease-in-out infinite",
+                float2: "float2 4.2s ease-in-out infinite",
+                float3: "float3 4.5s ease-in-out infinite",
                 slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
                 slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
             },

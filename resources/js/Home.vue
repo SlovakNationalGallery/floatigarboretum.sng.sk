@@ -71,10 +71,9 @@
             />
         </div>
     </div>
-    <div class="h-96"></div>
-
-    <!-- <img class="pb-12 object-cover h-96 md:mx-auto md:-mt-16" src="./assets/arboretum.png" /> -->
-
+    <div class="h-96">
+        <!-- placeholder for arboretum -->
+    </div>
     <div class="container mx-auto px-6 py-12 md:flex">
         <article>
             <h2 class="text-lg pb-2 opacity-60">
