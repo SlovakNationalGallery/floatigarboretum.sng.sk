@@ -11,7 +11,7 @@
                     {{ $t("Opening") }}
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("18.4") }}</span>
+                    <span class="font-display text-2xl">{{ $t("18.4.") }}</span>
                     <span class="text-xl">{{ formatTime("1630") }}</span>
                 </div>
                 <Separator
