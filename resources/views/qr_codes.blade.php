@@ -7,7 +7,7 @@
         </h1>
 
         <a href="{{ route('qr.download') }}"
-            class="font-display text-white bg-red hover:bg-red/80 transition rounded-2xl py-2 px-4 mb-8 inline-block">
+            class="font-display text-white bg-orange hover:bg-orange/80 transition rounded-2xl py-2 px-4 mb-8 inline-block">
             Download all QR codes
         </a>
 
