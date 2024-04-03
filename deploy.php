@@ -6,7 +6,7 @@ require 'recipe/laravel.php';
 // Config
 
 set('repository', 'git@github.com:SlovakNationalGallery/floatingarboretum.sng.sk.git');
-set('bin/npm', 'n exec 20 npm');
+set('bin/npm', 'n --offline exec 20 npm');
 set('bin/php', 'php8.2');
 set('bin/composer', '{{bin/php}} {{deploy_path}}/.dep/composer.phar');
 
