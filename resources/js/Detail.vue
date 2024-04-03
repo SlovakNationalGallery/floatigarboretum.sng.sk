@@ -5,9 +5,17 @@
                 class="flex flex-col items-center justify-center overflow-hidden relative mt-16 lg:sticky lg:top-0 lg:left-16"
             >
                 <div class="flex relative items-center w-[175%] gap-2">
-                    <img class="w-1/2 max-h-96 py-3 object-contain lg:invisible" :src="state.imageUrlPrev" />
-                    <img class="w-2/3 max-h-96 object-contain" :src="state.imageUrl" />
-                    <img class="w-1/2 max-h-96 py-3 object-contain lg:invisible" :src="state.imageUrlNext" />
+                    <img
+                        class="w-1/2 max-h-96 py-3 object-contain lg:invisible"
+                        :src="state.imageSrcPrev"
+                        :srcset="`${state.imageSrcsetPrev}`"
+                    />
+                    <img class="w-2/3 max-h-96 object-contain" :src="state.imageSrc" :srcset="`${state.imageSrcset}`" />
+                    <img
+                        class="w-1/2 max-h-96 py-3 object-contain lg:invisible"
+                        :src="state.imageSrcNext"
+                        :srcset="`${state.imageSrcsetNext}`"
+                    />
                 </div>
                 <router-link
                     :to="{ name: 'tree', params: { id: state.indexPrev } }"
@@ -31,27 +39,27 @@
                         ></path>
                     </svg>
                 </router-link>
-                <h2 class="font-display text-3xl pt-4">{{ trees[state.index].title }}</h2>
+                <h2 class="font-display text-3xl pt-4 text-center">{{ trees[state.index - 1][lang].title }}</h2>
                 <span class="text-sm pb"
-                    >{{ trees[state.index].location }}/{{ trees[state.index].protest }}/{{
-                        trees[state.index].dating
-                    }}</span
+                    >{{ trees[state.index - 1][lang].location }}{{
+                        trees[state.index - 1][lang].protest && `/${trees[state.index - 1][lang].protest}`
+                    }}{{ trees[state.index - 1][lang].dating && `/${trees[state.index - 1][lang].dating}` }}</span
                 >
                 <div class="hidden pt-10 left-0 right-0 lg:block w-full">
-                    <MusicPlayer class="container mx-auto" :index="state.index"></MusicPlayer>
+                    <MusicPlayer class="container mx-auto" :index="state.index" :key="state.index"></MusicPlayer>
                 </div>
             </section>
         </div>
         <div class="lg:relative lg:w-full lg:mt-96">
             <section class="container mx-auto px-5 mt-6 lg:mr-0">
                 <h3 class="text-xl opacity-60 pb-2">{{ $t("Story") }}</h3>
-                <p class="pb-8 lg:text-2xl" v-html="trees[state.index].story"></p>
+                <p class="pb-8 lg:text-2xl whitespace-pre-wrap" v-html="trees[state.index - 1][lang].story"></p>
                 <h3 class="text-xl opacity-60 pb-2">{{ $t("Poem") }}</h3>
-                <p class="lg:text-xl" v-html="trees[state.index].poem"></p>
-                <p class="text-sm pt-3 lg:text-xl" v-html="trees[state.index].references"></p>
+                <p class="lg:text-xl whitespace-pre-wrap">{{ trees[state.index - 1].poem }}</p>
+                <p class="text-sm pt-3 lg:text-xl" v-html="trees[state.index - 1].references"></p>
             </section>
             <div class="sticky container mx-auto px-5 bottom-0 pb-2.5 pt-10 left-0 right-0 lg:hidden">
-                <MusicPlayer :index="state.index"></MusicPlayer>
+                <MusicPlayer :index="state.index" :key="state.index"></MusicPlayer>
             </div>
             <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row lg:py-20">
                 <!-- TODO: Add proper links -->
@@ -76,20 +84,37 @@ import MusicPlayer from "./MusicPlayer.vue";
 import { trees } from "./consts";
 import { useRoute } from "vue-router";
 import { watch, reactive } from "vue";
+import { useLanguage } from "./composables/language";
 
 const route = useRoute();
 const state = reactive({ index: 0, indexNext: 0, indexPrev: 0, imageUrl: "", imageUrlNext: "", imageUrlPrev: "" });
+const { lang } = useLanguage();
 
 watch(
     route,
     () => {
-        state.index = parseInt(route.params.id) || 0;
-        state.indexNext = !parseInt(route.params.id) || state.index > trees.length - 2 ? 1 : state.index + 1;
-        state.indexPrev = !parseInt(route.params.id) || state.index < 1 ? trees.length - 1 : state.index - 1;
+        state.index = parseInt(route.params.id) || 1;
+        state.indexNext = !parseInt(route.params.id) || state.index > trees.length - 1 ? 1 : state.index + 1;
+        state.indexPrev = !parseInt(route.params.id) || state.index < 2 ? trees.length : state.index - 1;
 
-        state.imageUrl = new URL(`./assets/trees/${state.index}.png`, import.meta.url).href;
-        state.imageUrlNext = new URL(`./assets/trees/${state.indexNext}.png`, import.meta.url).href;
-        state.imageUrlPrev = new URL(`./assets/trees/${state.indexPrev}.png`, import.meta.url).href;
+        state.imageSrc = new URL(`./assets/trees/tree-${state.index}.png`, import.meta.url).href;
+        state.imageSrcset =
+            new URL(`./assets/trees/tree-${state.index}.png`, import.meta.url).href +
+            " 1x, " +
+            new URL(`./assets/trees/tree-${state.index}@2x.png`, import.meta.url).href +
+            " 2x";
+        state.imageSrcNext = new URL(`./assets/trees/tree-${state.indexNext}.png`, import.meta.url).href;
+        state.imageSrcsetNext =
+            new URL(`./assets/trees/tree-${state.indexNext}.png`, import.meta.url).href +
+            " 1x, " +
+            new URL(`./assets/trees/tree-${state.indexNext}@2x.png`, import.meta.url).href +
+            " 2x";
+        state.imageSrcPrev = new URL(`./assets/trees/tree-${state.indexPrev}.png`, import.meta.url).href;
+        state.imageSrcsetPrev =
+            new URL(`./assets/trees/tree-${state.indexPrev}.png`, import.meta.url).href +
+            " 1x, " +
+            new URL(`./assets/trees/tree-${state.indexPrev}@2x.png`, import.meta.url).href +
+            " 2x";
     },
     { immediate: true }
 );

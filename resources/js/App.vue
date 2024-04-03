@@ -127,15 +127,9 @@
 
 <script setup>
 import { ref } from "vue";
-import { getActiveLanguage, loadLanguageAsync } from "laravel-vue-i18n";
-
-const lang = ref(getActiveLanguage());
+import { useLanguage } from "./composables/language"
+const { lang, switchLanguage } = useLanguage();
 const isMenuOpen = ref(false);
-
-const switchLanguage = (locale) => {
-    loadLanguageAsync(locale);
-    lang.value = locale;
-};
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;

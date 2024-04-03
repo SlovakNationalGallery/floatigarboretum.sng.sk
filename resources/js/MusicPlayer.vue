@@ -82,11 +82,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onUnmounted } from "vue";
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
 const props = defineProps(['index'])
 
-const audio = ref(new Audio(`/audio/${props.index || 0}.mp3`));
+const audio = ref(new Audio(`/audio/soundtrack_${props.index || 1}.mp3`));
 const isPlaying = ref(false);
 const currentTime = ref([0]);
 const duration = ref(0);
@@ -138,4 +138,6 @@ audio.value.addEventListener('ended', () => {
     audio.value.pause();
     audio.value.currentTime = 0;
 });
+
+onUnmounted(() => audio.value.pause())
 </script>
