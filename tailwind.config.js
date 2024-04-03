@@ -14,7 +14,7 @@ export default {
                 dark: "#336087",
                 darker: "#2C4356",
             },
-            red: "#CD1421",
+            orange: "#c36919",
             dropShadow: {
                 xl: "10px 14px 24px 0px rgba(7, 33, 60, 0.22)",
             },
