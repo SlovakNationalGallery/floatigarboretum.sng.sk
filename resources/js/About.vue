@@ -79,11 +79,11 @@
         <section class="md:flex md:items-start md:justify-between md:flex-row-reverse">
             <div class="pb-6 lg:p-16 md:w-1/2">
                 <!-- @todo: clarify how the artist photo should behave -->
-                <img src="./assets/oto.jpg" class="md:ml-auto drop-shadow-xl max-w-72" />
+                <img v-if="profileImage" :src="profileImage" class="md:ml-auto drop-shadow-xl max-w-72" />
             </div>
 
-            <AccordionRoot class="w-full" default-value="item-1" type="single" :collapsible="true">
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-1">
+            <AccordionRoot class="w-full" type="single" :collapsible="true" v-model="selectedProfile">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="oto">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -122,7 +122,7 @@
                         </p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-2">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="lydia">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -161,7 +161,7 @@
                         </p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-3">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="juliana">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -186,7 +186,7 @@
                         </p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-4">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="michaela">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -212,7 +212,7 @@
                     </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-5">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="samuel">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -245,7 +245,7 @@
                         </p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-6">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="petra">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -278,7 +278,7 @@
                         </p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem class="border-b border-white/15 overflow-hidden" value="item-7">
+                <AccordionItem class="border-b border-white/15 overflow-hidden" value="fero">
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="flex items-center justify-between w-full py-6 group">
                             <h3 class="font-display text-2xl text-left group-hover:text-blue-lighter transition-colors">
@@ -322,10 +322,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { getActiveLanguage } from "laravel-vue-i18n";
 import AccordionIcon from "./components/AccordionIcon.vue";
 import { AccordionContent, AccordionHeader, AccordionItem, AccordionRoot, AccordionTrigger } from "radix-vue";
 
 const lang = ref(getActiveLanguage());
+const selectedProfile = ref("oto");
+
+const profileImage = ref(null);
+
+const profileImages = {
+    oto: new URL("./assets/oto.jpg", import.meta.url).href,
+    lydia: new URL("./assets/lydia.jpg", import.meta.url).href,
+};
+
+watch(selectedProfile, (newValue) => {
+    updateProfileImage(newValue || "oto");
+});
+
+const updateProfileImage = (value) => {
+    if (profileImages[value]) {
+        profileImage.value = profileImages[value];
+    } else {
+        profileImage.value = null;
+    }
+};
+
+onMounted(() => {
+    updateProfileImage(selectedProfile.value);
+});
 </script>
