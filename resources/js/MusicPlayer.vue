@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex items-center justify-between px-3 py-3 bg-orange rounded-full space-x-2"
+        class="flex items-center justify-between px-3 py-3 bg-orange rounded-full space-x-2 drop-shadow-md"
     >
         <div v-if="wasStarted" class="flex items-center space-x-1 w-full">
             <div class="text-sm text-gray-500 w-12 text-center">

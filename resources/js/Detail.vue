@@ -2,17 +2,17 @@
     <div class="lg:container lg:mx-auto lg:flex lg:gap-x-4">
         <div class="lg:w-96 lg:shrink-0">
             <section
-                class="flex flex-col items-center justify-center overflow-hidden relative mt-16 lg:sticky lg:top-0 lg:left-16"
+                class="flex flex-col items-center justify-center overflow-hidden relative mt-16 lg:sticky lg:top-0 lg:left-16 lg:p-4"
             >
                 <div class="flex relative items-center w-[175%] gap-2">
                     <img
-                        class="w-1/2 max-h-96 py-3 object-contain lg:invisible"
+                        class="w-1/2 h-80 object-bottom py-3 object-contain lg:invisible animate-float2"
                         :src="state.imageSrcPrev"
                         :srcset="`${state.imageSrcsetPrev}`"
                     />
-                    <img class="w-2/3 max-h-96 object-contain" :src="state.imageSrc" :srcset="`${state.imageSrcset}`" />
+                    <img class="w-2/3 h-96 object-bottom object-contain animate-float1" :src="state.imageSrc" :srcset="`${state.imageSrcset}`" />
                     <img
-                        class="w-1/2 max-h-96 py-3 object-contain lg:invisible"
+                        class="w-1/2 h-80 object-bottom py-3 object-contain lg:invisible animate-float3"
                         :src="state.imageSrcNext"
                         :srcset="`${state.imageSrcsetNext}`"
                     />
@@ -58,7 +58,7 @@
                 <p class="lg:text-xl whitespace-pre-wrap">{{ trees[state.index - 1].poem }}</p>
                 <p class="text-sm pt-3 lg:text-xl" v-html="trees[state.index - 1].references"></p>
             </section>
-            <div class="sticky container mx-auto px-5 bottom-0 pb-2.5 pt-10 left-0 right-0 lg:hidden">
+            <div class="sticky container mx-auto px-5 bottom-7 pb-2.5 pt-10 left-0 right-0 lg:hidden">
                 <MusicPlayer :index="state.index" :key="state.index"></MusicPlayer>
             </div>
             <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row lg:py-20">
