@@ -16,6 +16,8 @@ use App\Http\Controllers\QrCodesController;
 Route::get('/qr', [QrCodesController::class, 'index'])->name('qr.index');
 Route::get('/qr/download', [QrCodesController::class, 'download'])->name('qr.download');
 
+Route::redirect('/downloads/curator_text_undefined.pdf', '/downloads/curator_text_en.pdf', 301);
+
 Route::get('/{any}', function () {
     return view('app');
 })->where('any', '.*');
