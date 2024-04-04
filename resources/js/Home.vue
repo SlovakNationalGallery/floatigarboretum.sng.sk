@@ -99,9 +99,10 @@
             </router-link>
         </article>
         <div class="flex justify-center items-center flex-1 pt-12 md:pt-0">
-            <span class="text-center inline-block max-w-80 py-3 px-8 md:text-2xl bg-orange -rotate-12 hover:-rotate-6 text-blue-darker transition rounded-[70px]">
+            <router-link
+                to="/for-visitors" class="text-center inline-block max-w-80 py-3 px-8 md:text-2xl bg-orange drop-shadow-lg hover:drop-shadow-2xl -rotate-12 hover:-rotate-6 transition rounded-[70px]">
                 {{ $t("The exhibition starts on the 20th of April") }}
-            </span>
+            </router-link>
         </div>
     </div>
 </template>
