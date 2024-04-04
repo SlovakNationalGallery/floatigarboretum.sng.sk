@@ -12,4 +12,6 @@ class Tree extends Model
     use HasTranslations;
 
     public $translatable = ['title', 'location', 'story'];
+    protected $fillable = ['title', 'location', 'story', 'dating', 'estimated_age', 'estimated_height', 'is_published'];
+    
 }
