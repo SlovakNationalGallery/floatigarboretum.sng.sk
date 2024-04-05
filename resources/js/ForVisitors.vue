@@ -31,7 +31,7 @@
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("18.4.") }}</span>
-                    <span class="text-xl">{{ formatTime("1700") }} - {{ formatTime("1900") }} {{ $t("(TBA)") }}</span>
+                    <span class="text-xl">{{ formatTime("1700") }}</span>
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
@@ -40,7 +40,27 @@
                     <span class="font-display text-2xl">{{ $t("19.4.") }}</span>
                     <span class="text-xl"
                         >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1700") }}</span
+                        {{ formatTime("1715") }}</span
+                    >
+                </div>
+                <Separator
+                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
+                />
+                <div class="flex flex-col md:flex-row justify-between w-full py-4">
+                    <span class="font-display text-2xl">{{ $t("20.4.") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1715") }}</span
+                    >
+                </div>
+                <Separator
+                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
+                />
+                <div class="flex flex-col md:flex-row justify-between w-full py-4">
+                    <span class="font-display text-2xl">{{ $t("21.4.") }}</span>
+                    <span class="text-xl"
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1715") }}</span
                     >
                 </div>
                 <Separator
@@ -100,16 +120,6 @@
                     {{ $t("Schedule of performances") }}
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("14.4. – 22.4.2024") }}</span>
-                    <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1700") }}</span
-                    >
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("20.5. – 27.5.2024") }}</span>
                     <span class="text-xl"
                         >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
@@ -166,8 +176,12 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 import { Separator } from "radix-vue";
+import { useLanguage } from "./composables/language";
 import moment from "moment";
-const formatTime = computed(() => (time) => moment(time, "HHmm").format("HH:mm"));
+
+const { lang } = useLanguage();
+
+const formatTime = (time) =>
+    lang.value === "sk" ? moment(time, "HHmm").format("HH:mm") : moment(time, "HHmm").format("hh:mm a");
 </script>
