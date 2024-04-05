@@ -1,7 +1,7 @@
 import { ref, watch, toRef } from "vue";
 import { loadLanguageAsync } from "laravel-vue-i18n";
 
-const lang = ref(localStorage.getItem("language") || "en");
+const lang = ref(sessionStorage.getItem("language") || "sk");
 
 export function useLanguage() {
 
