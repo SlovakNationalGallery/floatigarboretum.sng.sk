@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\Tree;
-use Illuminate\Http\Request;
-use App\Http\Resources\TreeResource;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('trees', function () {
-    return TreeResource::collection(Tree::where('is_published', true)->get());
-});
-
-Route::get('trees/{tree}', function (Tree $tree) {
-    return new TreeResource($tree);
-});
+Route::get('trees', [TreeController::class, 'index']);
+Route::get('trees/{tree}', [TreeController::class, 'show']);
