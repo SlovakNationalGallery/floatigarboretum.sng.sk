@@ -7,6 +7,7 @@ use App\Filament\Resources\TreeResource\RelationManagers;
 use App\Models\Tree;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -15,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TreeResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = Tree::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -88,4 +91,12 @@ class TreeResource extends Resource
             'index' => Pages\ManageTrees::route('/'),
         ];
     }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+        ];
+    }
+
 }
