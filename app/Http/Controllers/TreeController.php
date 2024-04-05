@@ -10,11 +10,14 @@ class TreeController extends Controller
 {
     public function index()
     {
-        return TreeResource::collection(Tree::where('is_published', true)->get());
+        return TreeResource::collection(Tree::published()->get());
     }
 
     public function show(Tree $tree)
     {
+        if (!$tree->is_published) {
+            abort(404);
+        }
         return new TreeResource($tree);
     }
 }

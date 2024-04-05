@@ -14,16 +14,23 @@ class TreeApiTest extends TestCase
     public function test_get_all_trees()
     {
         $response = $this->get('/api/trees');
-
         $response->assertStatus(200);
     }
 
     public function test_get_single_tree()
     {
-        $tree = Tree::factory()->create();
+        $publishedTree = Tree::factory()->create(['is_published' => true]);
+        $unpublishedTree = Tree::factory()->create(['is_published' => false]);
 
-        $response = $this->get('/api/trees/' . $tree->id);
-
+        $response = $this->get('/api/trees/' . $publishedTree->id);
         $response->assertStatus(200);
+
+        $response->assertJsonFragment([
+            'id' => $publishedTree->id,
+        ]);
+
+        // Request the unpublished tree
+        $response = $this->get('/api/trees/' . $unpublishedTree->id);
+        $response->assertStatus(404);
     }
 }

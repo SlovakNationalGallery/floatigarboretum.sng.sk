@@ -13,5 +13,14 @@ class Tree extends Model
 
     public $translatable = ['title', 'location', 'story'];
     protected $fillable = ['title', 'location', 'story', 'dating', 'estimated_age', 'estimated_height', 'is_published'];
+
+    protected $casts = [
+        'is_published' => 'boolean',
+    ];
+
+    public function scopePublished($query)
+    {
+        return $query->where('is_published', true);
+    }
     
 }
