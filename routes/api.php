@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('trees', [TreeController::class, 'index']);
+Route::get('trees/{tree}', [TreeController::class, 'show']);

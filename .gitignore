@@ -2,10 +2,13 @@
 /node_modules
 /public/build
 /public/hot
+/public/css
+/public/js
 /public/storage
 /storage/*.key
 /vendor
 .env
+.env.testing
 .env.backup
 .env.production
 .phpunit.result.cache
