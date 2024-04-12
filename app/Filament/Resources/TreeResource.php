@@ -22,9 +22,6 @@ class TreeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $modelLabel = 'strom';
-    protected static ?string $pluralModelLabel = 'stromy';
-
     public static function form(Form $form): Form
     {
         return $form
