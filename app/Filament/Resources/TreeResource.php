@@ -2,17 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TreeResource\Pages;
-use App\Filament\Resources\TreeResource\RelationManagers;
-use App\Models\Tree;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Concerns\Translatable;
-use Filament\Resources\Resource;
+use App\Models\Tree;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Resources\Concerns\Translatable;
+use App\Filament\Resources\TreeResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\TreeResource\RelationManagers;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class TreeResource extends Resource
 {
@@ -39,6 +41,7 @@ class TreeResource extends Resource
                     ->numeric(),
                 Forms\Components\Toggle::make('is_published')
                     ->required(),
+                SpatieMediaLibraryFileUpload::make('image')->responsiveImages()
             ]);
     }
 
@@ -46,6 +49,10 @@ class TreeResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable()
+                    ->searchable(),
+                SpatieMediaLibraryImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('dating')
