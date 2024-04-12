@@ -27,7 +27,7 @@
             </div>
         </div>
         <div v-else>
-            <span class="uppercase font-display text-blue-darker">{{ $t('Play story') }}</span>
+            <span class="uppercase font-display text-blue-darker">{{ $t('Play song') }}</span>
         </div>
         <div class="flex items-center space-x-2">
             <button @click="playPause" type="button" class="focus:outline-none bg-blue-darker rounded-full p-1">
