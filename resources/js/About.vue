@@ -323,11 +323,12 @@
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
-import { getActiveLanguage } from "laravel-vue-i18n";
+import { useLanguage } from "./composables/language"
+
 import AccordionIcon from "./components/AccordionIcon.vue";
 import { AccordionContent, AccordionHeader, AccordionItem, AccordionRoot, AccordionTrigger } from "radix-vue";
 
-const lang = ref(getActiveLanguage());
+const { lang } = useLanguage();
 const selectedProfile = ref("oto");
 
 const profileImage = ref(null);
