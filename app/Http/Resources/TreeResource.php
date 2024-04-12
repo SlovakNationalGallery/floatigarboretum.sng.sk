@@ -22,6 +22,7 @@ class TreeResource extends JsonResource
             'dating' => $this->dating,
             'estimated_age' => $this->estimated_age,
             'estimated_height' => $this->estimated_height,
+            'image' => new ImageResource($this->getFirstMedia()),
         ];
     }
 }
