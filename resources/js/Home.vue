@@ -91,16 +91,26 @@
                     )
                 }}
             </p>
+            <div class="flex flex-col container mx-auto gap-2.5 lg:mr-0 lg:flex-row">
             <router-link
                 to="/about"
                 class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px]"
             >
                 {{ $t("Find out more") }}
             </router-link>
+            <a
+                href="https://jira.sng.sk/servicedesk/customer/portal/9/create/98"
+                class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px]"
+            >
+                {{ $t("Submit your story") }}
+            </a>
+        </div>
         </article>
         <div class="flex justify-center items-center flex-1 pt-12 md:pt-0">
             <router-link
-                to="/for-visitors" class="text-center inline-block max-w-80 py-3 px-8 md:text-2xl bg-orange drop-shadow-lg hover:drop-shadow-2xl -rotate-12 hover:-rotate-6 transition rounded-[70px]">
+                to="/for-visitors"
+                class="text-center inline-block max-w-80 py-3 px-8 md:text-2xl bg-orange drop-shadow-lg hover:drop-shadow-2xl -rotate-12 hover:-rotate-6 transition rounded-[70px]"
+            >
                 {{ $t("The exhibition starts on the 20th of April") }}
             </router-link>
         </div>
