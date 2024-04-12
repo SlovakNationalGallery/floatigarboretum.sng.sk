@@ -2,11 +2,11 @@
     <div class="lg:container lg:mx-auto lg:flex lg:gap-x-4">
         <div class="lg:w-96 lg:shrink-0">
             <section
-                class="flex flex-col items-center justify-center overflow-hidden relative mt-16 lg:sticky lg:top-0 lg:left-16 lg:p-4"
+                class="flex flex-col items-center justify-center overflow-hidden relative lg:sticky lg:top-0 lg:left-16 lg:p-4 mt-6 lg:mt-2.5"
             >
                 <div class="flex relative items-center w-[175%] gap-2">
                     <DetailTransition :right-origin="state.direction === 'right'" zoom="in">
-                        <div class="w-1/2 h-80" :key="state.index">
+                        <div class="w-1/2 h-72" :key="state.index">
                             <img
                                 class="w-full h-full object-bottom object-contain lg:invisible animate-float2"
                                 :src="state.imageSrcPrev"
@@ -15,7 +15,7 @@
                         </div>
                     </DetailTransition>
                     <DetailTransition :right-origin="state.direction === 'right'" zoom="out">
-                        <div class="w-2/3 h-96" :key="state.index">
+                        <div class="w-2/3 h-80" :key="state.index">
                             <img
                                 class="w-full h-full object-bottom object-contain animate-float1"
                                 :src="state.imageSrc"
@@ -24,7 +24,7 @@
                         </div>
                     </DetailTransition>
                     <DetailTransition :right-origin="state.direction === 'right'" zoom="in">
-                        <div class="w-1/2 h-80" :key="state.index">
+                        <div class="w-1/2 h-72" :key="state.index">
                             <img
                                 class="w-full h-full object-bottom object-contain lg:invisible animate-float3"
                                 :src="state.imageSrcNext"
@@ -77,7 +77,7 @@
             </section>
         </div>
         <FadeInOutTransition>
-            <div class="lg:relative lg:w-full lg:mt-96" :key="state.index">
+            <div class="lg:relative lg:w-full lg:mt-72" :key="state.index">
                 <section class="container mx-auto px-5 mt-6 lg:mr-0">
                     <h3 class="text-xl opacity-60 pb-2">{{ $t("Story") }}</h3>
                     <p class="pb-8 lg:text-2xl whitespace-pre-wrap" v-html="trees[state.index - 1][lang].story"></p>
