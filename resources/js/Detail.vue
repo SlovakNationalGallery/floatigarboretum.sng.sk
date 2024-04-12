@@ -143,23 +143,23 @@ watch(
         state.indexNext = !parseInt(route.params.id) || state.index > trees.length - 1 ? 1 : state.index + 1;
         state.indexPrev = !parseInt(route.params.id) || state.index < 2 ? trees.length : state.index - 1;
 
-        state.imageSrc = new URL(`./assets/trees/tree-${state.index}.png`, import.meta.url).href;
+        state.imageSrc = new URL(`./assets/trees/tree-detail-${state.index}.png`, import.meta.url).href;
         state.imageSrcset =
-            new URL(`./assets/trees/tree-${state.index}.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.index}.png`, import.meta.url).href +
             " 1x, " +
-            new URL(`./assets/trees/tree-${state.index}@2x.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.index}@2x.png`, import.meta.url).href +
             " 2x";
-        state.imageSrcNext = new URL(`./assets/trees/tree-${state.indexNext}.png`, import.meta.url).href;
+        state.imageSrcNext = new URL(`./assets/trees/tree-detail-${state.indexNext}.png`, import.meta.url).href;
         state.imageSrcsetNext =
-            new URL(`./assets/trees/tree-${state.indexNext}.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.indexNext}.png`, import.meta.url).href +
             " 1x, " +
-            new URL(`./assets/trees/tree-${state.indexNext}@2x.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.indexNext}@2x.png`, import.meta.url).href +
             " 2x";
-        state.imageSrcPrev = new URL(`./assets/trees/tree-${state.indexPrev}.png`, import.meta.url).href;
+        state.imageSrcPrev = new URL(`./assets/trees/tree-detail-${state.indexPrev}.png`, import.meta.url).href;
         state.imageSrcsetPrev =
-            new URL(`./assets/trees/tree-${state.indexPrev}.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.indexPrev}.png`, import.meta.url).href +
             " 1x, " +
-            new URL(`./assets/trees/tree-${state.indexPrev}@2x.png`, import.meta.url).href +
+            new URL(`./assets/trees/tree-detail-${state.indexPrev}@2x.png`, import.meta.url).href +
             " 2x";
 
         if (!oldRouteIndex) return;
