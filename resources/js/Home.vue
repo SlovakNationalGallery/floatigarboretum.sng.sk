@@ -22,57 +22,57 @@
             <img
                 src="./assets/trees/tree-6.png"
                 srcset="./assets/trees/tree-6.png 1x, ./assets/trees/tree-6@2x.png 2x"
-                class="absolute top-[141px] left-[51px] drop-shadow-lg animate-float2"
+                class="absolute top-[141px] left-[51px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-1.png"
                 srcset="./assets/trees/tree-1.png 1x, ./assets/trees/tree-1@2x.png 2x"
-                class="absolute top-[203px] left-[174px] drop-shadow-lg animate-float3"
+                class="absolute top-[203px] left-[174px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-2.png"
                 srcset="./assets/trees/tree-2.png 1x, ./assets/trees/tree-2@2x.png 2x"
-                class="absolute top-[194px] left-[296px] drop-shadow-lg animate-float1"
+                class="absolute top-[194px] left-[296px] drop-shadow-lg animate-float1 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-5.png"
                 srcset="./assets/trees/tree-5.png 1x, ./assets/trees/tree-5@2x.png 2x"
-                class="absolute top-[213px] left-[409px] drop-shadow-lg animate-float2"
+                class="absolute top-[213px] left-[409px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-7.png"
                 srcset="./assets/trees/tree-7.png 1x, ./assets/trees/tree-7@2x.png 2x"
-                class="absolute top-[10px] left-[534px] drop-shadow-lg animate-float3"
+                class="absolute top-[10px] left-[534px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-8.png"
                 srcset="./assets/trees/tree-8.png 1x, ./assets/trees/tree-8@2x.png 2x"
-                class="absolute top-[213px] left-[685px] drop-shadow-lg animate-float3"
+                class="absolute top-[213px] left-[685px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-9.png"
                 srcset="./assets/trees/tree-9.png 1x, ./assets/trees/tree-9@2x.png 2x"
-                class="absolute top-[110px] left-[798px] drop-shadow-lg animate-float2"
+                class="absolute top-[110px] left-[798px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-11.png"
                 srcset="./assets/trees/tree-11.png 1x, ./assets/trees/tree-11@2x.png 2x"
-                class="absolute top-[202px] left-[918px] drop-shadow-lg animate-float3"
+                class="absolute top-[202px] left-[918px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-10.png"
                 srcset="./assets/trees/tree-10.png 1x, ./assets/trees/tree-10@2x.png 2x"
-                class="absolute top-[163px] left-[975px] drop-shadow-lg animate-float2"
+                class="absolute top-[163px] left-[975px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-4.png"
                 srcset="./assets/trees/tree-4.png 1x, ./assets/trees/tree-4@2x.png 2x"
-                class="absolute top-[112px] left-[1105px] drop-shadow-lg animate-float3"
+                class="absolute top-[112px] left-[1105px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
                 src="./assets/trees/tree-3.png"
                 srcset="./assets/trees/tree-3.png 1x, ./assets/trees/tree-3@2x.png 2x"
-                class="absolute top-[151px] left-[1221px] drop-shadow-lg animate-float1"
+                class="absolute top-[151px] left-[1221px] drop-shadow-lg animate-float1 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
         </div>
     </div>
