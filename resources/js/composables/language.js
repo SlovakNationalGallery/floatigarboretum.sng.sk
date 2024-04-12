@@ -11,12 +11,6 @@ export function useLanguage() {
         loadLanguageAsync(newLanguage);
     }
 
-    watch(lang, (newVal, oldVal) => {
-        if (newVal !== oldVal) {
-            console.log(`Language changed from ${oldVal} to ${newVal}`);
-        }
-    });
-
     onMounted(() => {
         // If the user comes from a QR code, switch to English language automatically (if language is not set yet)
         const urlParams = new URLSearchParams(window.location.search);
