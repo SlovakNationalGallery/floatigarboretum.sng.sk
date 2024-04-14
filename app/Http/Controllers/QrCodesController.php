@@ -13,7 +13,7 @@ class QrCodesController extends Controller
     public $routes = [
         '/for-visitors',
         '/trees',
-        '/inforazioni',
+        '/informazioni',
         '/trees/1',
         '/trees/2',
         '/trees/3',
