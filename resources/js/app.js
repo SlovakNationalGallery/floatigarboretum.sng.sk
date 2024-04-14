@@ -9,6 +9,7 @@ import About from "./About.vue";
 import Detail from "./Detail.vue";
 import Trees from "./Trees.vue";
 import ForVisitors from "./ForVisitors.vue";
+import Informazioni from "./Informazioni.vue";
 
 import App from "./App.vue";
 
@@ -20,6 +21,7 @@ const routes = [
     { path: "/trees/:id", component: Detail, name: "tree" },
     { path: "/trees", component: Trees },
     { path: "/for-visitors", component: ForVisitors },
+    { path: "/informazioni", component: Informazioni },
 ];
 
 const router = createRouter({
