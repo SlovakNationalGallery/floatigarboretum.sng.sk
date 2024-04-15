@@ -84,7 +84,7 @@
                     <h3 class="text-xl opacity-60 pb-2">{{ $t("Poem") }}</h3>
                     <p class="lg:text-xl whitespace-pre-wrap">{{ trees[state.index - 1].poem }}</p>
                     <p class="text-sm pt-3 lg:text-xl pb-3" v-html="trees[state.index - 1].references"></p>
-                    <p class="pt-3">{{ $t("Performers") }}: {{ trees[state.index - 1].performers }}</p>
+                    <p class="pt-3">{{ $t("Performance and singing") }}: {{ trees[state.index - 1].performers }}</p>
                     <p>Mastering: Peter Groll</p>
                 </section>
                 <div
