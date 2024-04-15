@@ -114,14 +114,6 @@
             </div>
             <div class="pb-6">© 2024 lab.SNG</div>
         </div>
-        <div>
-            <a href="https://kunsthallebratislava.sk" target="_blank"
-                ><img
-                    src="./assets/logo-khb.svg"
-                    alt="kunsthalle bratislava"
-                    class="w-60"
-            /></a>
-        </div>
     </footer>
 </template>
 
