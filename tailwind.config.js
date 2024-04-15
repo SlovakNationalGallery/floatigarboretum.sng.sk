@@ -23,17 +23,17 @@ export default {
             keyframes: {
                 float1: {
                   '0%': { transform: 'translateY(0px)' },
-                  '50%': { transform: 'translateY(-7px)' },
+                  '50%': { transform: 'translateY(-10px)' },
                   '100%': { transform: 'translateY(0px)' },
                 },
                 float2: {
                     '0%': { transform: 'translateY(0px)' },
-                    '50%': { transform: 'translateY(-5px)' },
+                    '50%': { transform: 'translateY(-7px)' },
                     '100%': { transform: 'translateY(0px)' },
                 },
                 float3: {
                     '0%': { transform: 'translateY(0px)' },
-                    '50%': { transform: 'translateY(-4px)' },
+                    '50%': { transform: 'translateY(-5px)' },
                     '100%': { transform: 'translateY(0px)' },
                 },
                 slideDown: {
