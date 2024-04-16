@@ -103,7 +103,7 @@
                     {{ $t("Discover visitors stories") }}
                 </router-link> -->
                     <a
-                        href="https://jira.sng.sk/servicedesk/customer/portal/9/create/98"
+                        href="https://jira.sng.sk/plugins/servlet/loginfreeRedirMain?portalid=9"
                         class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px] text-center"
                     >
                         {{ $t("Submit your story") }}
