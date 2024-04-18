@@ -95,7 +95,7 @@
             <h2 class="text-lg pb-2 opacity-60">
                 {{ $t("About the project") }}
             </h2>
-            <p class="pb-6 max-w-[800px] leading-normal md:text-2xl">
+            <p class="pb-6 max-w-[665px] leading-normal text-2xl">
                 {{
                     $t(
                         "Here are various trees of a symbolic Floating Arboretum. You can click on these trees and read their short stories. You can also submit a tree of your own choice, the one that you wish to become part of this arboretum."
