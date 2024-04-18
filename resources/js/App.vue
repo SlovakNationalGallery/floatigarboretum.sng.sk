@@ -10,7 +10,7 @@
         class="container mx-auto px-4 md:px-0 pt-3 md:pt-6 text-blue-darker"
         :class="
             isMenuOpen
-                ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-50 left-0 top-0'
+                ? 'bg-blue-lighter flex flex-col w-screen h-screen fixed z-30 left-0 top-0'
                 : ''
         "
     >
