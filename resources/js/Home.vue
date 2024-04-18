@@ -14,10 +14,10 @@
             </h1>
         </div>
     </div>
-    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 md:hidden z-50 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollLeft">
+    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollLeft">
         <ArrowLeftIcon class="w-8 h-8" />
     </button>
-    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 md:hidden z-50 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollRight">
+    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollRight">
         <ArrowRightIcon class="w-8 h-8" />
     </button>
     <div
