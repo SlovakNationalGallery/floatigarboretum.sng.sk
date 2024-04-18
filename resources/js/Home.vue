@@ -168,10 +168,17 @@ const selectTree = (id) => {
 };
 
 const scrollLeft = () => {
-    arboretumWrapper.value.scrollLeft -= 100;
+    arboretumWrapper.value.scroll({
+        left: arboretumWrapper.value.scrollLeft - 100,
+        behavior: "smooth",
+    });
 };
 
 const scrollRight = () => {
-    arboretumWrapper.value.scrollLeft += 100;
+    arboretumWrapper.value.scroll({
+        left: arboretumWrapper.value.scrollLeft + 100,
+        behavior: "smooth",
+    });
+
 };
 </script>
