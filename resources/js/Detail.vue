@@ -37,23 +37,13 @@
                     :to="{ name: 'tree', params: { id: state.indexPrev } }"
                     class="group bg-blue-lighter bg-opacity-80 absolute left-4 bottom-1/2 w-8 h-8 flex items-center justify-center blur-[0.5px] rounded-full"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-blue-darkest" viewBox="0 0 256 256">
-                        <path
-                            stroke-width="16"
-                            d="M220,128a4,4,0,0,1-4,4H49.66l65.17,65.17a4,4,0,0,1-5.66,5.66l-72-72a4,4,0,0,1,0-5.66l72-72a4,4,0,0,1,5.66,5.66L49.66,124H216A4,4,0,0,1,220,128Z"
-                        ></path>
-                    </svg>
+                    <ArrowLeftIcon class="w-6 h-6" />
                 </router-link>
                 <router-link
                     :to="{ name: 'tree', params: { id: state.indexNext } }"
                     class="group bg-blue-lighter bg-opacity-80 absolute right-4 bottom-1/2 w-8 h-8 flex items-center justify-center blur-[0.5px] rounded-full"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-blue-darkest" viewBox="0 0 256 256">
-                        <path
-                            stroke-width="16"
-                            d="M218.83,130.83l-72,72a4,4,0,0,1-5.66-5.66L206.34,132H40a4,4,0,0,1,0-8H206.34L141.17,58.83a4,4,0,0,1,5.66-5.66l72,72A4,4,0,0,1,218.83,130.83Z"
-                        ></path>
-                    </svg>
+                    <ArrowRightIcon class="w-6 h-6" />
                 </router-link>
                 <FadeInOutTransition>
                     <div :key="state.index" class="w-full text-center py-3">
@@ -121,6 +111,8 @@ import { watch, reactive, ref } from "vue";
 import { useLanguage } from "./composables/language";
 import DetailTransition from "./components/DetailTransition.vue";
 import FadeInOutTransition from "./components/FadeInOutTransition.vue";
+import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
+import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 
 const route = useRoute();
 const state = reactive({

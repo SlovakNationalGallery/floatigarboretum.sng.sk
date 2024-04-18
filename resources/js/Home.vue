@@ -14,6 +14,12 @@
             </h1>
         </div>
     </div>
+    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollLeft">
+        <ArrowLeftIcon class="w-8 h-8" />
+    </button>
+    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollRight">
+        <ArrowRightIcon class="w-8 h-8" />
+    </button>
     <div
         class="w-screen overflow-x-auto overflow-y-visible h-[600px] z-10 absolute top-52 scrollbar-hide"
         ref="arboretumWrapper"
@@ -138,6 +144,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
+import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
 
 const router = useRouter();
 const arboretumContainer = ref(null);
@@ -157,5 +165,20 @@ const adjustScroll = () => {
 
 const selectTree = (id) => {
     router.push(`/trees/${id}`);
+};
+
+const scrollLeft = () => {
+    arboretumWrapper.value.scroll({
+        left: arboretumWrapper.value.scrollLeft - 100,
+        behavior: "smooth",
+    });
+};
+
+const scrollRight = () => {
+    arboretumWrapper.value.scroll({
+        left: arboretumWrapper.value.scrollLeft + 100,
+        behavior: "smooth",
+    });
+
 };
 </script>
