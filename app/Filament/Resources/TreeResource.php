@@ -39,7 +39,7 @@ class TreeResource extends Resource
                 Forms\Components\TextInput::make('estimated_height'),
                 Forms\Components\Toggle::make('is_published')
                     ->required(),
-                SpatieMediaLibraryFileUpload::make('image')->responsiveImages()
+                SpatieMediaLibraryFileUpload::make('image')->multiple()->responsiveImages()
             ]);
     }
 
