@@ -35,13 +35,11 @@ class TreeResource extends Resource
                     ->columnSpan('full'),
                 Forms\Components\TextInput::make('dating')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('estimated_age')
-                    ->numeric(),
-                Forms\Components\TextInput::make('estimated_height')
-                    ->numeric(),
+                Forms\Components\TextInput::make('estimated_age'),
+                Forms\Components\TextInput::make('estimated_height'),
                 Forms\Components\Toggle::make('is_published')
                     ->required(),
-                SpatieMediaLibraryFileUpload::make('image')->responsiveImages()
+                SpatieMediaLibraryFileUpload::make('image')->multiple()->responsiveImages()
             ]);
     }
 
