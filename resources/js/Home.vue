@@ -14,10 +14,16 @@
             </h1>
         </div>
     </div>
-    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollLeft">
+    <button
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full"
+        @click="scrollLeft"
+    >
         <ArrowLeftIcon class="w-8 h-8" />
     </button>
-    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full" @click="scrollRight">
+    <button
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 md:hidden z-20 bg-blue-lighter active:bg-opacity-50 bg-opacity-80 rounded-full"
+        @click="scrollRight"
+    >
         <ArrowRightIcon class="w-8 h-8" />
     </button>
     <div
@@ -130,14 +136,7 @@
                 </a>
             </div>
         </article>
-        <div class="flex justify-center items-center flex-1 pt-12 md:pt-0">
-            <router-link
-                to="/for-visitors"
-                class="text-center inline-block max-w-80 py-3 px-8 md:text-2xl bg-orange drop-shadow-lg hover:drop-shadow-2xl -rotate-12 hover:-rotate-6 transition rounded-[70px]"
-            >
-                {{ $t("The exhibition starts on the 20th of April") }}
-            </router-link>
-        </div>
+        <HomeScreenBadge />
     </div>
 </template>
 
@@ -146,6 +145,7 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import ArrowLeftIcon from "./icons/ArrowLeftIcon.vue";
 import ArrowRightIcon from "./icons/ArrowRightIcon.vue";
+import HomeScreenBadge from "./components/HomeScreenBadge.vue"
 
 const router = useRouter();
 const arboretumContainer = ref(null);
