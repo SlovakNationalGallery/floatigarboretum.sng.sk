@@ -4,7 +4,7 @@
             to="/for-visitors"
             class="text-center flex flex-col max-w-80 py-3 px-8 md:text-2xl bg-orange drop-shadow-lg hover:drop-shadow-2xl -rotate-12 hover:-rotate-6 transition rounded-[70px]"
         >
-            <span>{{ $t("Closest performances:") }}</span>
+            <span>{{ $t("Next performances:") }}</span>
             <span>{{ nextDate.start.format("D.M.") }}&nbsp;-&nbsp;{{ nextDate.end.format("D.M.") }}</span>
             <span>{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }}, {{ formatTime("1700") }}</span>
         </router-link>
