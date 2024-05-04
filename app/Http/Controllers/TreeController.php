@@ -8,9 +8,11 @@ use App\Http\Resources\TreeResource;
 
 class TreeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return TreeResource::collection(Tree::published()->get());
+        $perPage = 9; // Number of items per page
+        $trees = Tree::published()->paginate($perPage);
+        return TreeResource::collection($trees);
     }
 
     public function show(Tree $tree)
