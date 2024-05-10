@@ -23,7 +23,7 @@ import '@splidejs/vue-splide/css';
 interface Props {
     rewind?: boolean;
     omitEnd?: boolean;
-    arrows: boolean;
+    arrows?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

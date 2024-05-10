@@ -108,7 +108,7 @@
                 <span class="text-base">{{ $t("(duration of performance: 20 min)") }}</span>
             </section>
         </div>
-        <div class="pt-12">
+        <div class="pt-8">
             <a
                 href="https://labiennale.vivaticket.it/en/tour/la-biennale-di-venezia-57-esposizione-internazionale-d-arte/754"
                 class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px] text-center"
@@ -117,31 +117,90 @@
                 {{ $t("Buy your tickets") }}
             </a>
         </div>
-        <section class="pt-12">
-            <h2 class="pb-6 opacity-60">
+        <section class="pt-16">
+            <h2 class="pb-6 font-display text-3xl">
                 {{ $t("Photogallery from the opening") }}
             </h2>
         </section>
         <Slider>
-            <SplideSlide class="h-[175px] overflow-hidden lg:h-[401px]" v-for="i in 11" :key="i">
-                <img
-                    :alt="$t('Photo of the exhibition') + ' ' + i"
-                    :src="`/images/photogallery/photo-${i}.jpg`"
-                    class="aspect-video h-full object-cover md:aspect-auto"
-                />
-            </SplideSlide>
+            <DialogRoot>
+                <SplideSlide class="h-[175px] overflow-hidden lg:h-[401px]" v-for="i in 11" :key="i">
+                    <DialogTrigger class="aspect-video h-full object-cover md:aspect-auto cursor-pointer">
+                        <img
+                            :alt="$t('Photo of the exhibition') + ' ' + i"
+                            :src="`/images/photogallery/photo-${i}.jpg`"
+                            class="aspect-video h-full object-cover md:aspect-auto"
+                            @click="openModal(`/images/photogallery/photo-${i}.jpg`)"
+                        />
+                    </DialogTrigger>
+                </SplideSlide>
+
+                <DialogPortal>
+                    <DialogOverlay class="bg-blue/80 data-[state=open]:animate-overlayShow fixed inset-0 z-30" />
+                    <DialogContent
+                        class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-16rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100]"
+                    >
+                        <DialogDescription>
+                            <img
+                                :src="selectedImage"
+                                alt="Lightbox Image"
+                                class="mx-auto h-full max-h-[calc(100vh-16rem)] max-w-full flex-1 object-contain"
+                            />
+                        </DialogDescription>
+
+                        <DialogClose
+                            class="text-grass11 hover:bg-green4 focus:shadow-green7 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
+                            aria-label="Close"
+                        >
+                            <CloseIcon class="h-6 w-6" />
+                        </DialogClose>
+                    </DialogContent>
+                </DialogPortal>
+            </DialogRoot>
         </Slider>
+
+        <!-- <Portal>
+            <Dialog :open="selectedImage !== null">
+                <img :src="selectedImage" alt="Lightbox Image" />
+                <button @click="selectedImage = null">
+                    <Cross1Icon />
+                </button>
+            </Dialog>
+        </Portal> -->
     </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { Separator } from "radix-vue";
 import { useLanguage } from "./composables/language";
 import moment from "moment";
 import Slider from "./components/Slider.vue";
+import CloseIcon from "./icons/CloseIcon.vue";
+import {
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogOverlay,
+    DialogPortal,
+    DialogRoot,
+    DialogTitle,
+    DialogTrigger,
+} from "radix-vue";
 
 const { lang } = useLanguage();
 
+const selectedImage = ref(null);
+
 const formatTime = (time) =>
     lang.value === "sk" ? moment(time, "HHmm").format("HH:mm") : moment(time, "HHmm").format("hh:mm a");
+
+const openModal = (imageUrl) => {
+    console.log(imageUrl);
+    selectedImage.value = imageUrl;
+
+    // Implement your logic to open the modal with the provided image URL
+    // For example, you can use a modal library or create a custom modal component
+    // to display the image.
+};
 </script>
