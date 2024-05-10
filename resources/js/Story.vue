@@ -43,13 +43,13 @@
                     </div>
                     <FadeInOutTransition>
                         <div class="w-full text-center py-3">
-                            <h2 class="font-display text-3xl pt-4 text-center">{{ story.data.title }}</h2>
+                            <h2 class="font-display text-3xl pt-4 mx-2 text-center">
+                                {{ story.data.title }}
+                            </h2>
                             <span class="text-sm pb"
                                 >{{ story.data.location }}
-                                {{ story.data.estimated_height ? ` / ${story.data.estimated_height} ${"meters"}` : ""
-                                }}{{
-                                    story.data.estimated_age ? ` / ${story.data.estimated_age} ${"years"}` : ""
-                                }}</span
+                                {{ story.data.estimated_height ? ` / ${story.data.estimated_height}` : ""
+                                }}{{ story.data.estimated_age ? ` / ${story.data.estimated_age}` : "" }}</span
                             >
                         </div>
                     </FadeInOutTransition>
@@ -59,7 +59,7 @@
                 <div class="lg:relative lg:w-full lg:mt-72">
                     <section class="container mx-auto px-5 mt-6 lg:mr-0">
                         <h3 class="text-xl opacity-60 pb-2">{{ $t("Story") }}</h3>
-                        <p class="pb-8 lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
+                        <p class="lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
                     </section>
                     <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row lg:py-20">
                         <router-link

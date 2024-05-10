@@ -73,6 +73,13 @@
                 ></span>
                 {{ $t("About the project") }}
             </router-link>
+            <router-link to="/trees" @click="toggleMenu()">
+                <span
+                    v-if="$route.path === '/trees'"
+                    class="bg-blue-darker/30 h-px w-5 mr-0.5 align-middle inline-block"
+                ></span>
+                {{ $t("Discover stories") }}
+            </router-link>
             <router-link to="/for-visitors" @click="toggleMenu()">
                 <span
                     v-if="$route.path === '/for-visitors'"
@@ -88,6 +95,10 @@
             <div class="pb-6">
                 <router-link to="/about" class="group inline-block pr-4">
                     {{ $t("About the project") }}
+                    <span class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"></span>
+                </router-link>
+                <router-link to="/trees" class="group inline-block pr-4">
+                    {{ $t("Discover stories") }}
                     <span class="block opacity-40 group-hover:opacity-0 transition h-px bg-blue-lightest -mt-px"></span>
                 </router-link>
                 <router-link to="/for-visitors" class="group inline-block pr-4">

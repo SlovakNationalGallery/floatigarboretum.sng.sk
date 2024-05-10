@@ -19,7 +19,7 @@
                     <img :src="getImgSrc(tree.image?.src)" :srcset="tree.image?.srcset" class="w-full h-[350px] object-cover" />
                 </div>
                 <div class="px-6">
-                    <h3 class="font-display text-3xl">{{ tree.title }}</h3>
+                    <h3 class="font-display text-3xl text-ellipsis overflow-hidden">{{ tree.title }}</h3>
                     <h5 class="opacity-60">{{ tree.location }}</h5>
                     <p v-html="tree.story" class="line-clamp-3 pt-2" />
                 </div>
