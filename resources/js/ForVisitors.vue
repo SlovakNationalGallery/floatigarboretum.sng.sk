@@ -5,71 +5,7 @@
         </h1>
     </div>
     <div class="container mx-auto px-6 py-12 md:pt-16">
-        <div class="mr-auto max-w-[800px] mt-4">
-            <section class="mb-4">
-                <h2 class="pb-2 opacity-60">
-                    {{ $t("Opening") }}
-                </h2>
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("18.4.") }}</span>
-                    <span class="text-xl">{{ formatTime("1630") }}</span>
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-            </section>
-            <section class="mb-4 mt-6">
-                <h2 class="pb-2 opacity-60">
-                    {{ $t("Schedule of performances during preview") }}
-                </h2>
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("17.4.") }}</span>
-                    <span class="text-xl">{{ formatTime("1400") }}</span>
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("18.4.") }}</span>
-                    <span class="text-xl">{{ formatTime("1700") }}</span>
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("19.4.") }}</span>
-                    <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1715") }}</span
-                    >
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("20.4.") }}</span>
-                    <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1715") }}</span
-                    >
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("21.4.") }}</span>
-                    <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1715") }}</span
-                    >
-                </div>
-                <Separator
-                    class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
-                />
-                <span class="text-base">{{ $t("(duration of performance: 20 min)") }}</span>
-            </section>
-        </div>
-        <div class="mr-auto pt-12 md:pt-16 max-w-[800px]">
+        <div class="mr-auto max-w-[800px]">
             <section class="mb-4">
                 <h2 class="pb-2 opacity-60">
                     {{ $t("Opening hours") }}
