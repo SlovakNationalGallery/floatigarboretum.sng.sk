@@ -181,6 +181,34 @@
                 {{ $t("Buy your tickets") }}
             </a>
         </div>
+        <section class="pt-12">
+            <h2 class="pb-6 opacity-60">
+                {{ $t("Photogallery from the opening") }}
+            </h2>
+        </section>
+        <Slider>
+            <SplideSlide class="h-[175px] overflow-hidden lg:h-[401px]">
+                <img
+                    :alt="$t('Photo of the exhibition') + ' 1'"
+                    src="./assets/photogallery/BSK_0365.jpg"
+                    class="aspect-video h-full object-cover md:aspect-auto"
+                />
+            </SplideSlide>
+            <SplideSlide class="h-[175px] overflow-hidden lg:h-[401px]">
+                <img
+                    :alt="$t('Photo of the exhibition') + ' 2'"
+                    src="./assets/photogallery/BSK_0502.jpg"
+                    class="aspect-video h-full object-cover md:aspect-auto"
+                />
+            </SplideSlide>
+            <SplideSlide class="h-[175px] overflow-hidden lg:h-[401px]">
+                <img
+                    :alt="$t('Photo of the exhibition') + ' 3'"
+                    src="./assets/photogallery/BSK_1459.jpg"
+                    class="aspect-video h-full object-cover md:aspect-auto"
+                />
+            </SplideSlide>
+        </Slider>
     </div>
 </template>
 
@@ -188,6 +216,7 @@
 import { Separator } from "radix-vue";
 import { useLanguage } from "./composables/language";
 import moment from "moment";
+import Slider from "./components/Slider.vue";
 
 const { lang } = useLanguage();
 

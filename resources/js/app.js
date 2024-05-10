@@ -3,6 +3,8 @@ import "./bootstrap";
 import { createApp } from "vue";
 import { i18nVue } from "laravel-vue-i18n";
 import { createRouter, createWebHistory } from "vue-router";
+import VueSplide from '@splidejs/vue-splide';
+
 
 import Home from "./Home.vue";
 import About from "./About.vue";
@@ -39,5 +41,7 @@ app.use(i18nVue, {
         return await langs[`../../lang/${lang}.json`]();
     },
 });
+
+app.use( VueSplide );
 
 app.mount("#app");
