@@ -130,43 +130,34 @@
                             :alt="$t('Photo of the exhibition') + ' ' + i"
                             :src="`/images/photogallery/photo-${i}.jpg`"
                             class="aspect-video h-full object-cover md:aspect-auto"
-                            @click="openModal(`/images/photogallery/photo-${i}.jpg`)"
+                            @click="selectedImage = `/images/photogallery/photo-${i}.jpg`"
                         />
                     </DialogTrigger>
                 </SplideSlide>
 
                 <DialogPortal>
-                    <DialogOverlay class="bg-blue/80 data-[state=open]:animate-overlayShow fixed inset-0 z-30" />
+                    <DialogOverlay class="bg-blue/80 data-[state=open]:animate-overlayShow fixed inset-0 z-30">
+                        <DialogClose
+                            class="bg-white/10 hover:bg-white/20 p-4 focus:shadow-green7 absolute top-[20px] right-[20px] inline-flex appearance-none items-center justify-center rounded-full focus:outline-none"
+                            aria-label="Close"
+                        >
+                            <CloseIcon class="h-8 w-8" />
+                        </DialogClose>
+                    </DialogOverlay>
                     <DialogContent
-                        class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-16rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100]"
+                        class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-12rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100] flex items-center justify-center"
                     >
                         <DialogDescription>
                             <img
                                 :src="selectedImage"
                                 alt="Lightbox Image"
-                                class="mx-auto h-full max-h-[calc(100vh-16rem)] max-w-full flex-1 object-contain"
+                                class="h-full max-h-[calc(100vh-12rem)] max-w-full flex-1 object-contain"
                             />
                         </DialogDescription>
-
-                        <DialogClose
-                            class="text-grass11 hover:bg-green4 focus:shadow-green7 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
-                            aria-label="Close"
-                        >
-                            <CloseIcon class="h-6 w-6" />
-                        </DialogClose>
                     </DialogContent>
                 </DialogPortal>
             </DialogRoot>
         </Slider>
-
-        <!-- <Portal>
-            <Dialog :open="selectedImage !== null">
-                <img :src="selectedImage" alt="Lightbox Image" />
-                <button @click="selectedImage = null">
-                    <Cross1Icon />
-                </button>
-            </Dialog>
-        </Portal> -->
     </div>
 </template>
 
@@ -184,7 +175,6 @@ import {
     DialogOverlay,
     DialogPortal,
     DialogRoot,
-    DialogTitle,
     DialogTrigger,
 } from "radix-vue";
 
@@ -195,12 +185,4 @@ const selectedImage = ref(null);
 const formatTime = (time) =>
     lang.value === "sk" ? moment(time, "HHmm").format("HH:mm") : moment(time, "HHmm").format("hh:mm a");
 
-const openModal = (imageUrl) => {
-    console.log(imageUrl);
-    selectedImage.value = imageUrl;
-
-    // Implement your logic to open the modal with the provided image URL
-    // For example, you can use a modal library or create a custom modal component
-    // to display the image.
-};
 </script>
