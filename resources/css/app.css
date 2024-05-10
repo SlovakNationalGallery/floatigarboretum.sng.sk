@@ -18,5 +18,14 @@
     .scrollbar-hide {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
-    }
+    }    
 }
+
+#app .splide__arrow {
+    @apply bg-blue-lighter/40 hover:bg-blue-lighter/50 mb-5 h-12 w-12 opacity-100;
+}
+
+#app .splide__arrow svg {
+    @apply fill-white stroke-white;
+}
+
