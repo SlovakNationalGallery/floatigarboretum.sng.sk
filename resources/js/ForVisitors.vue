@@ -158,6 +158,9 @@
                 </DialogPortal>
             </DialogRoot>
         </Slider>
+        <div class="py-4 opacity-60">
+            {{ $t("Authors of photographs") }}: Monika Kováčová, Roberto Moro
+        </div>
     </div>
 </template>
 
