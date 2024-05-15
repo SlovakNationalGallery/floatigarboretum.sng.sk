@@ -46,7 +46,7 @@
                             <h2 class="font-display text-3xl pt-4 mx-2 text-center">
                                 {{ story.data.title }}
                             </h2>
-                            <span class="text-sm pb"
+                            <span class="text-sm"
                                 >{{ story.data.location }}
                                 {{ story.data.estimated_height ? ` / ${story.data.estimated_height}` : ""
                                 }}{{ story.data.estimated_age ? ` / ${story.data.estimated_age}` : "" }}</span
