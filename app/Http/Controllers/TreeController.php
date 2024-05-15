@@ -20,7 +20,7 @@ class TreeController extends Controller
         if (!$tree->is_published) {
             abort(404);
         }
-        app()->setLocale("sk");
+        
         return new TreeResource($tree);
     }
 }
