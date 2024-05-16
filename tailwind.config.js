@@ -18,6 +18,7 @@ export default {
             dropShadow: {
                 xl: "10px 14px 24px 0px rgba(7, 33, 60, 0.22)",
             },
+            black: "#000000",
         },
         extend: {
             keyframes: {
