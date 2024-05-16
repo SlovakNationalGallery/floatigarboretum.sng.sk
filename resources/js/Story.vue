@@ -60,13 +60,8 @@
                     <section class="container mx-auto px-5 mt-6 lg:mr-0">
                         <h3 class="text-xl opacity-60 pb-2">{{ $t("Story") }}</h3>
                         <p class="lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
-                    </section>
-                    <section>
-                        <section class="pt-16">
-                            <h2 class="pb-6 font-display text-3xl">
-                                {{ $t("Photogallery") }}
-                            </h2>
-                        </section>
+
+                        <h3 class="text-xl opacity-60 pb-4">{{ $t("Photogallery") }}</h3>
                         <Slider>
                             <DialogRoot>
                                 <SplideSlide
