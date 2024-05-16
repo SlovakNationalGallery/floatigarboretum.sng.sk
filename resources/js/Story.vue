@@ -62,7 +62,7 @@
                         <p class="lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
 
                         <h3 class="text-xl opacity-60 pb-4">{{ $t("Photogallery") }}</h3>
-                        <Slider>
+                        <Slider class="mb-8">
                             <DialogRoot>
                                 <SplideSlide
                                     class="h-[175px] overflow-hidden lg:h-[401px]"
@@ -112,7 +112,7 @@
                             </DialogRoot>
                         </Slider>
                     </section>
-                    <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row lg:py-20">
+                    <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row py-4 lg:py-6">
                         <router-link
                             to="/trees"
                             class="font-display py-3 px-8 text-lg border-white/30 border-2 hover:bg-orange hover:border-orange hover:text-blue-darker transition rounded-[70px] text-center"
