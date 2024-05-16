@@ -14,7 +14,7 @@ class Tree extends Model implements HasMedia
     use HasTranslations;
     use InteractsWithMedia;
 
-    public $translatable = ['title', 'location', 'story'];
+    public $translatable = ['title', 'location', 'story', 'estimated_age', 'estimated_height'];
     protected $fillable = ['title', 'location', 'story', 'dating', 'estimated_age', 'estimated_height', 'is_published'];
 
     protected $casts = [
