@@ -65,7 +65,7 @@
                 </button>
             </div>
         </div>
-        <nav class="mt-14 ml-8 space-y-6 text-3xl" :class="isMenuOpen ? 'flex flex-col' : 'hidden'">
+        <nav class="mt-14 mx-8 space-y-6 text-3xl h-full" :class="isMenuOpen ? 'flex flex-col' : 'hidden'">
             <router-link to="/about" @click="toggleMenu()">
                 <span
                     v-if="$route.path === '/about'"
@@ -87,6 +87,15 @@
                 ></span>
                 {{ $t("For visitors") }}
             </router-link>
+            <div class="grow flex flex-col pb-14">
+                <a
+                    class="font-display py-3 px-8 text-xl bg-blue-darker hover:bg-blue-dark text-white transition rounded-[70px] text-center mt-auto"
+                    href="https://jira.sng.sk/plugins/servlet/loginfreeRedirMain?portalid=9"
+                    target="_blank"
+                >
+                    {{ $t("Submit your story") }}
+                </a>
+            </div>
         </nav>
     </div>
     <router-view></router-view>
