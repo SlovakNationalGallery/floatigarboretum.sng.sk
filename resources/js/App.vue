@@ -34,6 +34,14 @@
                 </nav>
             </div>
             <div>
+                <a
+                    class="font-display py-2 px-4 bg-blue-darker hover:bg-blue-dark text-white transition rounded-[70px] text-center mr-6 hidden md:inline-block"
+                    href="https://jira.sng.sk/plugins/servlet/loginfreeRedirMain?portalid=9"
+                    target="_blank"
+                >
+                    {{ $t("Submit your") }}
+                    <span class="hidden xl:inline">{{ $t(" story") }}</span>
+                </a>
                 <button @click="switchLanguage('sk')" class="md:text-lg group">
                     <span class="hidden md:inline">Slovenčina</span>
                     <span class="md:hidden">SK</span>
