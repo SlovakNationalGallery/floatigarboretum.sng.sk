@@ -146,6 +146,11 @@
                     </DialogOverlay>
                     <DialogContent
                         class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-12rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100] flex items-center justify-center"
+                        @interact-outside="
+                            (event) => {
+                                return event.preventDefault();
+                            }
+                        "
                     >
                         <DialogDescription>
                             <img
@@ -158,9 +163,7 @@
                 </DialogPortal>
             </DialogRoot>
         </Slider>
-        <div class="py-4 opacity-60">
-            {{ $t("Authors of photographs") }}: Monika Kováčová, Roberto Moro
-        </div>
+        <div class="py-4 opacity-60">{{ $t("Authors of photographs") }}: Monika Kováčová, Roberto Moro</div>
     </div>
 </template>
 
@@ -187,5 +190,4 @@ const selectedImage = ref(null);
 
 const formatTime = (time) =>
     lang.value === "sk" ? moment(time, "HHmm").format("HH:mm") : moment(time, "HHmm").format("hh:mm a");
-
 </script>
