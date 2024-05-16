@@ -12,6 +12,8 @@ import Detail from "./Detail.vue";
 import Trees from "./Trees.vue";
 import ForVisitors from "./ForVisitors.vue";
 import Informazioni from "./Informazioni.vue";
+import Story from "./Story.vue";
+
 
 import App from "./App.vue";
 
@@ -22,6 +24,7 @@ const routes = [
     { path: "/about", component: About },
     { path: "/trees/:id", component: Detail, name: "tree" },
     { path: "/trees", component: Trees },
+    { path: "/story/:id", component: Story },
     { path: "/for-visitors", component: ForVisitors },
     { path: "/informazioni", component: Informazioni },
 ];

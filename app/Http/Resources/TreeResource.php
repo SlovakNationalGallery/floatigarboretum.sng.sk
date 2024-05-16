@@ -21,6 +21,7 @@ class TreeResource extends JsonResource
             'story' => str($this->story)->markdownWithLineBreaks(),
             'dating' => $this->dating,
             'estimated_age' => $this->estimated_age,
+            'formatte_age' => trans_choice('Try again',$this->estimated_age),
             'estimated_height' => $this->estimated_height,
             'image' => new ImageResource($this->getFirstMedia()),
         ];
