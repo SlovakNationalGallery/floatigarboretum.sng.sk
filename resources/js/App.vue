@@ -33,16 +33,16 @@
                     </router-link>
                 </nav>
             </div>
-            <div>
+            <div class="flex items-center">
                 <a
-                    class="font-display py-2 px-4 bg-blue-darker hover:bg-blue-dark text-white transition rounded-[70px] text-center mr-6 hidden md:inline-block"
+                    class="font-display py-2 px-4 bg-blue-darker hover:bg-blue-dark text-white transition rounded-[70px] text-center mr-2 xl:mr-6 hidden md:inline-block"
                     href="https://jira.sng.sk/plugins/servlet/loginfreeRedirMain?portalid=9"
                     target="_blank"
                 >
                     {{ $t("Submit your") }}
                     <span class="hidden xl:inline">{{ $t(" story") }}</span>
                 </a>
-                <button @click="switchLanguage('sk')" class="md:text-lg group">
+                <button @click="switchLanguage('sk')" class="md:text-lg group mr-1">
                     <span class="hidden md:inline">Slovenčina</span>
                     <span class="md:hidden">SK</span>
                     <span
@@ -51,7 +51,7 @@
                     ></span>
                 </button>
                 /
-                <button @click="switchLanguage('en')" class="text-lg group">
+                <button @click="switchLanguage('en')" class="text-lg group ml-1">
                     <span class="hidden md:inline">English</span>
                     <span class="md:hidden">EN</span>
 
