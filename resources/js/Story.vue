@@ -62,7 +62,7 @@
                         <p class="lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
 
                         <h3 class="text-xl opacity-60 pb-4">{{ $t("Photogallery") }}</h3>
-                        <Slider class="mb-8">
+                        <Slider class="mb-8" :arrows="(story.data.images.length > 1)">
                             <DialogRoot>
                                 <SplideSlide
                                     class="h-[175px] overflow-hidden lg:h-[401px]"
