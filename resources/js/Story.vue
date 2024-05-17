@@ -60,57 +60,58 @@
                     <section class="container mx-auto px-5 mt-6 lg:mr-0">
                         <h3 class="text-xl opacity-60 pb-2">{{ $t("Story") }}</h3>
                         <p class="lg:text-2xl whitespace-pre-wrap" v-html="story.data.story"></p>
-
-                        <h3 class="text-xl opacity-60 pb-4">{{ $t("Photogallery") }}</h3>
-                        <Slider class="mb-8" :arrows="(story.data.images.length > 1)">
-                            <DialogRoot>
-                                <SplideSlide
-                                    class="h-[175px] overflow-hidden lg:h-[401px]"
-                                    v-for="(image, i) in story.data.images"
-                                    :key="i"
-                                >
-                                    <DialogTrigger
-                                        class="aspect-video h-full object-cover md:aspect-auto cursor-pointer"
+                        <template v-if="story.data.images">
+                            <h3 class="text-xl opacity-60 pb-4">{{ $t("Photogallery") }}</h3>
+                            <Slider class="mb-8" :arrows="story.data.images.length > 1">
+                                <DialogRoot>
+                                    <SplideSlide
+                                        class="h-[175px] overflow-hidden lg:h-[401px]"
+                                        v-for="(image, i) in story.data.images"
+                                        :key="i"
                                     >
-                                        <img
-                                            :src="getImgSrc(image.src)"
-                                            :srcset="image.srcset"
-                                            class="aspect-video h-full object-cover md:aspect-auto"
-                                            @click="selectedImage = image.src"
-                                        />
-                                    </DialogTrigger>
-                                </SplideSlide>
-
-                                <DialogPortal>
-                                    <DialogOverlay
-                                        class="bg-blue/80 data-[state=open]:animate-overlayShow fixed inset-0 z-30"
-                                    >
-                                        <DialogClose
-                                            class="bg-white/10 hover:bg-white/20 p-4 focus:shadow-green7 absolute top-[20px] right-[20px] inline-flex appearance-none items-center justify-center rounded-full focus:outline-none"
-                                            aria-label="Close"
+                                        <DialogTrigger
+                                            class="aspect-video h-full object-cover md:aspect-auto cursor-pointer"
                                         >
-                                            <CloseIcon class="h-8 w-8" />
-                                        </DialogClose>
-                                    </DialogOverlay>
-                                    <DialogContent
-                                        class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-12rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100] flex items-center justify-center"
-                                        @interact-outside="
-                                            (event) => {
-                                                return event.preventDefault();
-                                            }
-                                        "
-                                    >
-                                        <DialogDescription>
                                             <img
-                                                :src="selectedImage"
-                                                alt="Lightbox Image"
-                                                class="h-full max-h-[calc(100vh-12rem)] max-w-full flex-1 object-contain"
+                                                :src="getImgSrc(image.src)"
+                                                :srcset="image.srcset"
+                                                class="aspect-video h-full object-cover md:aspect-auto"
+                                                @click="selectedImage = image.src"
                                             />
-                                        </DialogDescription>
-                                    </DialogContent>
-                                </DialogPortal>
-                            </DialogRoot>
-                        </Slider>
+                                        </DialogTrigger>
+                                    </SplideSlide>
+
+                                    <DialogPortal>
+                                        <DialogOverlay
+                                            class="bg-blue/80 data-[state=open]:animate-overlayShow fixed inset-0 z-30"
+                                        >
+                                            <DialogClose
+                                                class="bg-white/10 hover:bg-white/20 p-4 focus:shadow-green7 absolute top-[20px] right-[20px] inline-flex appearance-none items-center justify-center rounded-full focus:outline-none"
+                                                aria-label="Close"
+                                            >
+                                                <CloseIcon class="h-8 w-8" />
+                                            </DialogClose>
+                                        </DialogOverlay>
+                                        <DialogContent
+                                            class="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-full w-full max-w-[1140px] max-h-[calc(100vh-12rem)] translate-x-[-50%] translate-y-[-50%] focus:outline-none z-[100] flex items-center justify-center"
+                                            @interact-outside="
+                                                (event) => {
+                                                    return event.preventDefault();
+                                                }
+                                            "
+                                        >
+                                            <DialogDescription>
+                                                <img
+                                                    :src="selectedImage"
+                                                    alt="Lightbox Image"
+                                                    class="h-full max-h-[calc(100vh-12rem)] max-w-full flex-1 object-contain"
+                                                />
+                                            </DialogDescription>
+                                        </DialogContent>
+                                    </DialogPortal>
+                                </DialogRoot>
+                            </Slider>
+                        </template>
                     </section>
                     <section class="flex flex-col container mx-auto px-5 gap-2.5 lg:mr-0 lg:flex-row py-4 lg:py-6">
                         <router-link
