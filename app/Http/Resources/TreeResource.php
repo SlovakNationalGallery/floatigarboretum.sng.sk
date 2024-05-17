@@ -24,6 +24,7 @@ class TreeResource extends JsonResource
             'formatte_age' => trans_choice('Try again',$this->estimated_age),
             'estimated_height' => $this->estimated_height,
             'image' => new ImageResource($this->getFirstMedia()),
+            'images' => ImageResource::collection($this->getMedia()),
         ];
     }
 }
