@@ -161,6 +161,8 @@ const selectedImage = ref(null);
 
 // watch the params of the route to fetch the data again
 watch(() => route.params.id, fetchStory, { immediate: true });
+// watch the language to fetch the data again
+watch(lang, fetchStory);
 
 const getImgSrc = (src) =>
     src ? new URL(src, import.meta.url).href : new URL("./assets/tree-placeholder.png", import.meta.url).href;
