@@ -11,18 +11,19 @@
                 v-for="(tree, i) in treesRef.data"
                 :class="[
                     { 'animate-float1': i % 3 === 0, 'animate-float2': i % 3 === 1, 'animate-float3': i % 3 === 2 },
-                    'overflow-hidden rounded-[20px] bg-white h-[525px]',
+                    'overflow-hidden rounded-[20px] bg-white h-[525px] relative',
                 ]"
             >
                 <div class="relative">
                     <div class="bg-gradient-to-b absolute inset-0 from-white/5 via-white/5 to-white"></div>
                     <img :src="getImgSrc(tree.image?.src)" :srcset="tree.image?.srcset" class="w-full h-[350px] object-cover" />
                 </div>
-                <div class="px-6">
+                <div class="px-6 overflow-hidden">
                     <h3 class="font-display text-3xl text-ellipsis overflow-hidden">{{ tree.title }}</h3>
                     <h5 class="opacity-60">{{ tree.location }}</h5>
-                    <p v-html="tree.story" class="line-clamp-3 pt-2" />
+                    <div v-html="tree.story" class="pt-2" />
                 </div>
+                <div class="absolute bottom-0 left-0 w-full h-16 pointer-events-none bg-gradient-to-b from-transparent to-white to-80%"></div>
             </router-link>
         </div>
         <div v-if="loading">
