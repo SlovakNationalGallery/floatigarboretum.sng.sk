@@ -74,13 +74,13 @@
                 class="absolute top-[110px] left-[798px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
-                @click="selectTree(1)"
+                @click="selectTree(11)"
                 src="./assets/trees/tree-11.png"
                 srcset="./assets/trees/tree-11.png 1x, ./assets/trees/tree-11@2x.png 2x"
                 class="absolute top-[202px] left-[918px] drop-shadow-lg animate-float3 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
             />
             <img
-                @click="selectTree(1)"
+                @click="selectTree(10)"
                 src="./assets/trees/tree-10.png"
                 srcset="./assets/trees/tree-10.png 1x, ./assets/trees/tree-10@2x.png 2x"
                 class="absolute top-[163px] left-[975px] drop-shadow-lg animate-float2 hover:cursor-pointer hover:pause hover:drop-shadow-2xl transition-shadow"
