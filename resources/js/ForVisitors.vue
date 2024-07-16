@@ -58,7 +58,7 @@
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("21.5. – 26.5.2024") }}</span>
                     <span class="text-xl"
-                    >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
                         {{ formatTime("1700") }}</span
                     >
                 </div>
@@ -68,7 +68,7 @@
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("18.6. – 23.6. 2024") }}</span>
                     <span class="text-xl"
-                    >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
+                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
                         {{ formatTime("1700") }}</span
                     >
                 </div>
@@ -78,7 +78,7 @@
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
                     <span class="font-display text-2xl">{{ $t("23.7. – 28.7.2024") }}</span>
                     <span class="text-xl"
-                    >{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }},
+                        >{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }},
                         {{ formatTime("1600") }}</span
                     >
                 </div>
