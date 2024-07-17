@@ -6,7 +6,7 @@
         >
             <span>{{ $t("Next performances:") }}</span>
             <span>{{ nextDate.start.format("D.M.") }}&nbsp;-&nbsp;{{ nextDate.end.format("D.M.") }}</span>
-            <span>{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }}, {{ formatTime("1700") }}</span>
+            <span>{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }}, {{ formatTime("1600") }}</span>
         </router-link>
     </div>
 </template>
@@ -21,11 +21,11 @@ const formatTime = (time) =>
     lang.value === "sk" ? moment(time, "HHmm").format("HH:mm") : moment(time, "HHmm").format("hh:mm a");
 
 const schedule = [
-    { start: moment("20.5.2024", "D.M.YYYY"), end: moment("27.5.2024 18:00", "D.M.YYYY HH:mm") },
-    { start: moment("17.6.2024", "D.M.YYYY"), end: moment("24.6.2024 18:00", "D.M.YYYY HH:mm") },
-    { start: moment("22.7.2024", "D.M.YYYY"), end: moment("29.7.2024 18:00", "D.M.YYYY HH:mm") },
-    { start: moment("19.8.2024", "D.M.YYYY"), end: moment("26.8.2024 18:00", "D.M.YYYY HH:mm") },
-    { start: moment("23.9.2024", "D.M.YYYY"), end: moment("30.9.2024 18:00", "D.M.YYYY HH:mm") },
+    { start: moment("21.5.2024", "D.M.YYYY"), end: moment("26.5.2024 18:00", "D.M.YYYY HH:mm") },
+    { start: moment("18.6.2024", "D.M.YYYY"), end: moment("23.6.2024 18:00", "D.M.YYYY HH:mm") },
+    { start: moment("23.7.2024", "D.M.YYYY"), end: moment("28.7.2024 18:00", "D.M.YYYY HH:mm") },
+    { start: moment("20.8.2024", "D.M.YYYY"), end: moment("25.8.2024 18:00", "D.M.YYYY HH:mm") },
+    { start: moment("24.9.2024", "D.M.YYYY"), end: moment("29.9.2024 18:00", "D.M.YYYY HH:mm") },
 ];
 
 function getNextDate(schedule) {

@@ -56,7 +56,7 @@
                     {{ $t("Schedule of performances") }}
                 </h2>
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("20.5. – 27.5.2024") }}</span>
+                    <span class="font-display text-2xl">{{ $t("21.5. – 26.5.2024") }}</span>
                     <span class="text-xl"
                         >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
                         {{ formatTime("1700") }}</span
@@ -66,7 +66,7 @@
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("17.6. – 24.6. 2024") }}</span>
+                    <span class="font-display text-2xl">{{ $t("18.6. – 23.6. 2024") }}</span>
                     <span class="text-xl"
                         >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
                         {{ formatTime("1700") }}</span
@@ -76,30 +76,30 @@
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("22.7. – 29.7.2024") }}</span>
+                    <span class="font-display text-2xl">{{ $t("23.7. – 28.7.2024") }}</span>
                     <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1700") }}</span
+                        >{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1600") }}</span
                     >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("19.8. – 26.8.2024") }}</span>
+                    <span class="font-display text-2xl">{{ $t("20.8. – 25.8.2024") }}</span>
                     <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1700") }}</span
+                        >{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1600") }}</span
                     >
                 </div>
                 <Separator
                     class="bg-white opacity-15 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full mb-4"
                 />
                 <div class="flex flex-col md:flex-row justify-between w-full py-4">
-                    <span class="font-display text-2xl">{{ $t("23.9. – 30.9. 2024") }}</span>
+                    <span class="font-display text-2xl">{{ $t("24.9. – 29.9. 2024") }}</span>
                     <span class="text-xl"
-                        >{{ $t("at") }} {{ formatTime("1200") }}, {{ formatTime("1500") }},
-                        {{ formatTime("1700") }}</span
+                        >{{ $t("at") }} {{ formatTime("1400") }}, {{ formatTime("1500") }},
+                        {{ formatTime("1600") }}</span
                     >
                 </div>
                 <Separator
